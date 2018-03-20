@@ -115,7 +115,8 @@
     -fx-background-image: url("Images/forest-background.jpg");
 }
 
-.grid
+#guestsList
 {
-    -fx-stroke: green;
+    -fx-background-radius: .5em .5em .5em .5em;
+    -fx-border-radius: .5em .5em .5em .5em;
 }
