@@ -114,3 +114,8 @@
 {
     -fx-background-image: url("Images/forest-background.jpg");
 }
+
+.grid
+{
+    -fx-stroke: green;
+}
