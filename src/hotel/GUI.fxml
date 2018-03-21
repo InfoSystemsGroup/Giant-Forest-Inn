@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="bgPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@styling.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.Controller">
+<AnchorPane id="bgPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@styling.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.Controller">
    <children>
       <Pane id="topBorder" prefHeight="32.0" prefWidth="1366.0" style="-fx-background-color: #333333;" AnchorPane.bottomAnchor="736.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -16,40 +30,40 @@
             <Button id="btnMinimize" contentDisplay="GRAPHIC_ONLY" layoutX="1290.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@styling.css" text="Minimize" />
          </children>
       </Pane>
-      <AnchorPane id="sidePane" layoutY="32.0" prefHeight="736.0" prefWidth="320.0" style="-fx-background-color: #028444;" stylesheets="@styling.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1046.0" AnchorPane.topAnchor="32.0">
+      <AnchorPane id="sidePane" layoutY="32.0" prefHeight="736.0" prefWidth="320.0" style="-fx-background-color: #028444;" stylesheets="@styling.css">
          <children>
             <VBox layoutX="10.0" layoutY="160.0" prefHeight="335.0" prefWidth="300.0" spacing="1.0">
                <children>
-                  <Button id="btnDashboard" fx:id="btnDashboard" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="300.0" stylesheets="@styling.css" text="Dashboard" textFill="#f6f6f6">
+                  <JFXButton id="btnDashboard" fx:id="btnDashboard" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" text="Dashboard" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
-                  </Button>
-                  <Button id="btnBooking" fx:id="btnBooking" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="300.0" stylesheets="@styling.css" text="Booking" textFill="#f6f6f6">
+                  </JFXButton>
+                  <JFXButton id="btnBooking" fx:id="btnBooking" layoutX="10.0" layoutY="10.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" text="Booking" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
-                  </Button>
-                  <Button id="btnGuests" fx:id="btnGuests" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="300.0" stylesheets="@styling.css" text="Guests" textFill="#f6f6f6">
+                  </JFXButton>
+                  <JFXButton id="btnGuests" fx:id="btnGuests" layoutX="10.0" layoutY="66.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" text="Guests" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
-                  </Button>
-                  <Button id="btnCalendar" fx:id="btnCalendar" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="300.0" stylesheets="@styling.css" text="Calendar" textFill="#f6f6f6">
+                  </JFXButton>
+                  <JFXButton id="btnCalendar" fx:id="btnCalendar" layoutX="10.0" layoutY="122.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" text="Calendar" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
-                  </Button>
-                  <Button id="btnHotelMap" fx:id="btnHotelMap" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="300.0" stylesheets="@styling.css" text="Hotel Map" textFill="#f6f6f6">
+                  </JFXButton>
+                  <JFXButton id="btnHotelMap" fx:id="btnHotelMap" layoutX="10.0" layoutY="178.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" text="Hotel Map" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
-                  </Button>
-                  <Button id="btnBilling" fx:id="btnBilling" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="300.0" stylesheets="@styling.css" text="Billing" textFill="#f6f6f6">
+                  </JFXButton>
+                  <JFXButton id="btnBilling" fx:id="btnBilling" layoutX="10.0" layoutY="234.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" text="Billing" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
-                  </Button>
+                  </JFXButton>
                </children>
             </VBox>
          </children>
@@ -148,19 +162,18 @@
       </AnchorPane>
       <AnchorPane id="bookingPane" fx:id="bookingPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@styling.css" visible="false">
          <children>
-            <Pane layoutX="289.0" layoutY="206.0" opacity="0.9" prefHeight="309.0" prefWidth="469.0" style="-fx-background-color: #ffffff; -fx-background-radius: .5em;" AnchorPane.bottomAnchor="221.0" AnchorPane.topAnchor="206.0">
+            <Pane layoutX="289.0" layoutY="241.0" opacity="0.9" prefHeight="255.0" prefWidth="469.0" style="-fx-background-color: #ffffff; -fx-background-radius: .5em;" AnchorPane.bottomAnchor="240.0" AnchorPane.topAnchor="241.0">
                <effect>
                   <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
                </effect>
                <children>
-                  <DatePicker layoutX="85.0" layoutY="104.0" prefHeight="40.0" prefWidth="300.0" promptText="Choose check in date" />
-                  <DatePicker layoutX="85.0" layoutY="167.0" opacity="0.9" prefHeight="40.0" prefWidth="300.0" promptText="Choose check out date" />
-                  <ComboBox layoutX="85.0" layoutY="229.0" opacity="0.9" prefHeight="40.0" prefWidth="300.0" promptText="Number of guests" />
                   <Text fill="#028444" layoutX="111.0" layoutY="67.0" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" text="Check Availability" textAlignment="CENTER">
                      <font>
                         <Font name="Segoe UI" size="32.0" />
                      </font>
                   </Text>
+                  <JFXDatePicker defaultColor="#028444" layoutX="85.0" layoutY="100.0" opacity="0.9" prefHeight="40.0" prefWidth="300.0" />
+                  <JFXDatePicker defaultColor="#028444" layoutX="85.0" layoutY="167.0" opacity="0.9" prefHeight="40.0" prefWidth="300.0" />
                </children>
             </Pane>
             <Button id="btnNext" layoutX="875.0" layoutY="593.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="70.0" text="Next" textFill="#f6f6f6" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="100.0">
@@ -184,7 +197,7 @@
             <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
          </effect>
       </AnchorPane>
-      <AnchorPane id="guestsPane" fx:id="guestsPane" layoutX="320.0" layoutY="32.0" opacity="0.9" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;">
+      <AnchorPane id="guestsPane" fx:id="guestsPane" layoutX="320.0" layoutY="32.0" opacity="0.9" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" visible="false">
          <effect>
             <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
          </effect>
@@ -318,7 +331,7 @@
             <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
          </effect>
       </AnchorPane>
-      <AnchorPane id="billingPane" fx:id="billingPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" visible="false">
+      <AnchorPane id="billingPane" fx:id="billingPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0">
          <effect>
             <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
          </effect>

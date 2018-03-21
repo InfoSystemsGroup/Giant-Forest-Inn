@@ -8,11 +8,6 @@
     -fx-background-color: #333333;
 }
 
-.button:pressed
-{
-    -fx-background-color: #2b2b2b;
-}
-
 #btnDashboard
 {
     -fx-graphic-text-gap: 25px;
