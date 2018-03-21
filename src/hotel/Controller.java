@@ -18,61 +18,47 @@ public class Controller implements Initializable {
     private AnchorPane dashboardPane, bookingPane, guestsPane, calendarPane, hotelmapPane, billingPane;
 
     @FXML
-    public void handleButtonAction (ActionEvent event) {
+    public void handleButtonAction(ActionEvent event) {
 
         if (event.getTarget() == btnDashboard) {
+            setVisibility();
             dashboardPane.setVisible(true);
-            bookingPane.setVisible(false);
-            guestsPane.setVisible(false);
-            calendarPane.setVisible(false);
-            hotelmapPane.setVisible(false);
-            billingPane.setVisible(false);
         }
 
         else if (event.getSource() == btnBooking) {
-            dashboardPane.setVisible(false);
+            setVisibility();
             bookingPane.setVisible(true);
-            guestsPane.setVisible(false);
-            calendarPane.setVisible(false);
-            hotelmapPane.setVisible(false);
-            billingPane.setVisible(false);
         }
 
         else if (event.getSource() == btnGuests) {
-            dashboardPane.setVisible(false);
-            bookingPane.setVisible(false);
+            setVisibility();
             guestsPane.setVisible(true);
-            calendarPane.setVisible(false);
-            hotelmapPane.setVisible(false);
-            billingPane.setVisible(false);
         }
 
         else if (event.getSource() == btnCalendar) {
-            dashboardPane.setVisible(false);
-            bookingPane.setVisible(false);
-            guestsPane.setVisible(false);
+            setVisibility();
             calendarPane.setVisible(true);
-            hotelmapPane.setVisible(false);
-            billingPane.setVisible(false);
         }
 
         else if (event.getSource() == btnHotelMap) {
-            dashboardPane.setVisible(false);
-            bookingPane.setVisible(false);
-            guestsPane.setVisible(false);
-            calendarPane.setVisible(false);
+            setVisibility();
             hotelmapPane.setVisible(true);
-            billingPane.setVisible(false);
         }
 
         else if (event.getSource() == btnBilling) {
-            dashboardPane.setVisible(false);
-            bookingPane.setVisible(false);
-            guestsPane.setVisible(false);
-            calendarPane.setVisible(false);
-            hotelmapPane.setVisible(false);
+            setVisibility();
             billingPane.setVisible(true);
         }
+    }
+
+    public void setVisibility() {
+
+        dashboardPane.setVisible(false);
+        bookingPane.setVisible(false);
+        guestsPane.setVisible(false);
+        calendarPane.setVisible(false);
+        hotelmapPane.setVisible(false);
+        billingPane.setVisible(false);
     }
 
     public void initialize(URL url, ResourceBundle rb) {
