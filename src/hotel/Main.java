@@ -24,35 +24,19 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 1366, 768));
         primaryStage.show();
 
-        root.lookup("#topBorder").setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                xOffset = event.getSceneX();
-                yOffset = event.getSceneY();
-            }
+        root.lookup("#topBorder").setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
         });
 
-        root.lookup("#topBorder").setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                primaryStage.setX(event.getScreenX() - xOffset);
-                primaryStage.setY(event.getScreenY() - yOffset);
-            }
+        root.lookup("#topBorder").setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX() - xOffset);
+            primaryStage.setY(event.getScreenY() - yOffset);
         });
 
-        root.lookup("#btnClose").setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                System.exit(1);
-            }
-        });
+        root.lookup("#btnClose").setOnMousePressed(event -> System.exit(1));
 
-        root.lookup("#btnMinimize").setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                primaryStage.setIconified(true);
-            }
-        });
+        root.lookup("#btnMinimize").setOnMousePressed(event -> primaryStage.setIconified(true));
     }
 
     public static void main(String[] args) {
