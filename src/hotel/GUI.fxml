@@ -190,12 +190,12 @@
             <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
          </effect>
          <children>
-            <ScrollPane id="guestsList" hbarPolicy="NEVER" opacity="0.6" pannable="true" prefHeight="704.0" prefViewportHeight="650.0" prefViewportWidth="963.0" prefWidth="549.0" style="-fx-background-color: #f6f6f6;" stylesheets="@scrollpane.css" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
+            <ScrollPane id="guestsList" hbarPolicy="NEVER" opacity="0.7" pannable="true" prefHeight="704.0" prefViewportHeight="650.0" prefViewportWidth="963.0" prefWidth="549.0" style="-fx-background-color: #f6f6f6;" stylesheets="@scrollpane.css" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
                <effect>
                   <DropShadow blurType="ONE_PASS_BOX" color="#00000026" />
                </effect>
                <content>
-                  <ListView opacity="0.9" prefHeight="673.0" prefWidth="981.0" style="-fx-background-radius: .5em; -fx-background-color: transparent; -fx-border-color: transparent;" />
+                  <ListView opacity="0.9" prefHeight="788.0" prefWidth="981.0" style="-fx-background-radius: .5em; -fx-background-color: transparent; -fx-border-color: transparent;" />
                </content>
             </ScrollPane>
          </children>
