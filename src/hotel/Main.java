@@ -31,7 +31,7 @@ public class Main extends Application {
                 yOffset = event.getSceneY();
             }
         });
-//hi.
+
         root.lookup("#topBorder").setOnMouseDragged(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
