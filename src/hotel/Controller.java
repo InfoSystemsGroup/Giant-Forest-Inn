@@ -25,27 +25,27 @@ public class Controller implements Initializable {
             dashboardPane.setVisible(true);
         }
 
-        else if (event.getSource() == btnBooking) {
+        else if (event.getTarget() == btnBooking) {
             setVisibility();
             bookingPane.setVisible(true);
         }
 
-        else if (event.getSource() == btnGuests) {
+        else if (event.getTarget() == btnGuests) {
             setVisibility();
             guestsPane.setVisible(true);
         }
 
-        else if (event.getSource() == btnCalendar) {
+        else if (event.getTarget() == btnCalendar) {
             setVisibility();
             calendarPane.setVisible(true);
         }
 
-        else if (event.getSource() == btnHotelMap) {
+        else if (event.getTarget() == btnHotelMap) {
             setVisibility();
             hotelmapPane.setVisible(true);
         }
 
-        else if (event.getSource() == btnBilling) {
+        else if (event.getTarget() == btnBilling) {
             setVisibility();
             billingPane.setVisible(true);
         }
