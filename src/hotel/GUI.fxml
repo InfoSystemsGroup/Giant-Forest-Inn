@@ -176,22 +176,16 @@
                   <JFXDatePicker defaultColor="#028444" layoutX="85.0" layoutY="167.0" opacity="0.9" prefHeight="40.0" prefWidth="300.0" promptText="Choose a check out date" />
                </children>
             </Pane>
-            <Button id="btnNext" layoutX="875.0" layoutY="593.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="70.0" text="Next" textFill="#f6f6f6" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="100.0">
+            <JFXButton buttonType="RAISED" layoutX="800.0" layoutY="593.0" prefHeight="43.0" prefWidth="70.0" text="Back" textFill="#f6f6f6">
                <font>
-                  <Font name="Segoe UI" size="18.0" />
+                  <Font size="18.0" />
                </font>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" color="#00000026" />
-               </effect>
-            </Button>
-            <Button id="btnBack" layoutX="800.0" layoutY="593.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="70.0" text="Back" textFill="#f6f6f6" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="800.0">
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="876.0" layoutY="593.0" prefHeight="43.0" prefWidth="70.0" text="Next" textFill="#f6f6f6">
                <font>
-                  <Font name="Segoe UI" size="18.0" />
+                  <Font size="18.0" />
                </font>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" color="#00000026" />
-               </effect>
-            </Button>
+            </JFXButton>
          </children>
          <effect>
             <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
