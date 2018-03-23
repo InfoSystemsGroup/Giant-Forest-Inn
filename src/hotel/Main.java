@@ -12,7 +12,7 @@ public class Main extends Application {
 
     private double xOffset = 0;
     private double yOffset = 0;
-
+//hi friend.
     @Override
     public void start(final Stage primaryStage) throws Exception {
         primaryStage.initStyle(StageStyle.UNDECORATED);
