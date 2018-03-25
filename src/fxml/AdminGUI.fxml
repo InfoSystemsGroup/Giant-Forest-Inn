@@ -22,44 +22,54 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="bgPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@../stylesheets/styling.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Controller">
+<AnchorPane id="bgPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
    <children>
       <Pane id="topBorder" prefHeight="32.0" prefWidth="1366.0" style="-fx-background-color: #333333;" AnchorPane.bottomAnchor="736.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button id="btnClose" contentDisplay="GRAPHIC_ONLY" layoutX="1328.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../stylesheets/styling.css" text="Close" />
-            <Button id="btnMinimize" contentDisplay="GRAPHIC_ONLY" layoutX="1290.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../stylesheets/styling.css" text="Minimize" />
+            <Button id="btnClose" contentDisplay="GRAPHIC_ONLY" layoutX="1328.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../stylesheets/buttons.css" text="Close" />
+            <Button id="btnMinimize" contentDisplay="GRAPHIC_ONLY" layoutX="1290.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../stylesheets/buttons.css" text="Minimize" />
          </children>
       </Pane>
-      <AnchorPane id="sidePane" layoutY="32.0" prefHeight="736.0" prefWidth="320.0" style="-fx-background-color: #028444;" stylesheets="@../stylesheets/styling.css">
+      <AnchorPane id="sidePane" layoutY="32.0" prefHeight="736.0" prefWidth="320.0" style="-fx-background-color: #028444;">
          <children>
-            <VBox layoutX="10.0" layoutY="160.0" prefHeight="335.0" prefWidth="300.0" spacing="1.0">
+            <VBox layoutX="10.0" layoutY="160.0" prefHeight="440.0" prefWidth="300.0" spacing="1.0">
                <children>
-                  <JFXButton id="btnDashboard" fx:id="btnDashboard" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" text="Dashboard" textFill="#f6f6f6">
+                  <JFXButton id="btnDashboard" fx:id="btnDashboard" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../stylesheets/buttons.css" text="Dashboard" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="btnBooking" fx:id="btnBooking" layoutX="10.0" layoutY="10.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" text="Booking" textFill="#f6f6f6">
+                  <JFXButton id="btnBooking" fx:id="btnBooking" layoutX="10.0" layoutY="10.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../stylesheets/buttons.css" text="Booking" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="btnGuests" fx:id="btnGuests" layoutX="10.0" layoutY="66.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" text="Guests" textFill="#f6f6f6">
+                  <JFXButton id="btnGuests" fx:id="btnGuests" layoutX="10.0" layoutY="66.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../stylesheets/buttons.css" text="Guests" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="btnCalendar" fx:id="btnCalendar" layoutX="10.0" layoutY="122.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" text="Calendar" textFill="#f6f6f6">
+                  <JFXButton id="btnCalendar" fx:id="btnCalendar" layoutX="10.0" layoutY="122.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../stylesheets/buttons.css" text="Calendar" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="btnHotelMap" fx:id="btnHotelMap" layoutX="10.0" layoutY="178.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" text="Hotel Map" textFill="#f6f6f6">
+                  <JFXButton id="btnBilling" fx:id="btnBilling" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../stylesheets/buttons.css" text="Billing" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="btnBilling" fx:id="btnBilling" layoutX="10.0" layoutY="234.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" text="Billing" textFill="#f6f6f6">
+                  <JFXButton id="btnRoomStatus" fx:id="btnRoomStatus" layoutX="10.0" layoutY="234.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../stylesheets/buttons.css" text="Room Status" textFill="#f6f6f6">
+                     <font>
+                        <Font name="Segoe UI" size="22.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="btnHotelMap" fx:id="btnHotelMap" layoutX="10.0" layoutY="178.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../stylesheets/buttons.css" text="Hotel Map" textFill="#f6f6f6">
+                     <font>
+                        <Font name="Segoe UI" size="22.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="btnUsers" fx:id="btnUsers" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../stylesheets/buttons.css" text="Users" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
@@ -71,7 +81,7 @@
             <Insets />
          </opaqueInsets>
       </AnchorPane>
-      <AnchorPane id="dashboardPane" fx:id="dashboardPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+      <AnchorPane id="dashboardPane" fx:id="dashboardPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../stylesheets/backgrounds.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
          <children>
             <Pane layoutX="32.0" layoutY="32.0" opacity="0.9" prefHeight="165.0" prefWidth="276.0" style="-fx-background-color: #DA534F; -fx-background-radius: .5em;" AnchorPane.bottomAnchor="539.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="708.0" AnchorPane.topAnchor="32.0">
                <children>
@@ -160,7 +170,7 @@
             <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
          </effect>
       </AnchorPane>
-      <AnchorPane id="bookingPane" fx:id="bookingPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../stylesheets/styling.css" visible="false">
+      <AnchorPane id="bookingPane" fx:id="bookingPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../stylesheets/backgrounds.css" visible="false">
          <children>
             <Pane layoutX="289.0" layoutY="113.0" opacity="0.9" prefHeight="255.0" prefWidth="469.0" style="-fx-background-color: #ffffff; -fx-background-radius: .5em;" AnchorPane.bottomAnchor="368.0" AnchorPane.topAnchor="113.0">
                <effect>
@@ -176,12 +186,12 @@
                   <JFXDatePicker defaultColor="#028444" layoutX="85.0" layoutY="167.0" opacity="0.9" prefHeight="40.0" prefWidth="300.0" promptText="Choose a check out date" />
                </children>
             </Pane>
-            <JFXButton buttonType="RAISED" layoutX="800.0" layoutY="593.0" prefHeight="43.0" prefWidth="70.0" text="Back" textFill="#f6f6f6">
+            <JFXButton buttonType="RAISED" layoutX="800.0" layoutY="593.0" prefHeight="43.0" prefWidth="70.0" stylesheets="@../stylesheets/buttons.css" text="Back" textFill="#f6f6f6">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="876.0" layoutY="593.0" prefHeight="43.0" prefWidth="70.0" text="Next" textFill="#f6f6f6">
+            <JFXButton buttonType="RAISED" layoutX="876.0" layoutY="593.0" prefHeight="43.0" prefWidth="70.0" stylesheets="@../stylesheets/buttons.css" text="Next" textFill="#f6f6f6">
                <font>
                   <Font size="18.0" />
                </font>
@@ -191,12 +201,12 @@
             <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
          </effect>
       </AnchorPane>
-      <AnchorPane id="guestsPane" fx:id="guestsPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;">
+      <AnchorPane id="guestsPane" fx:id="guestsPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../stylesheets/backgrounds.css">
          <effect>
             <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
          </effect>
          <children>
-            <ScrollPane id="guestsList" hbarPolicy="NEVER" opacity="0.7" pannable="true" prefHeight="704.0" prefViewportHeight="650.0" prefViewportWidth="963.0" prefWidth="549.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../stylesheets/scrollpane.css" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
+            <ScrollPane id="guestsList" hbarPolicy="NEVER" opacity="0.7" pannable="true" prefHeight="704.0" prefViewportHeight="650.0" prefViewportWidth="963.0" prefWidth="549.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../stylesheets/scrollpanes.css" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
                <effect>
                   <DropShadow blurType="ONE_PASS_BOX" color="#00000026" />
                </effect>
@@ -206,12 +216,12 @@
             </ScrollPane>
          </children>
       </AnchorPane>
-      <AnchorPane id="calendarPane" fx:id="calendarPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" visible="false">
+      <AnchorPane id="calendarPane" fx:id="calendarPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" stylesheets="@../stylesheets/backgrounds.css" visible="false">
          <effect>
             <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
          </effect>
          <children>
-            <GridPane id="calendarGridPane" alignment="TOP_CENTER" layoutX="32.0" layoutY="26.0" opacity="0.9" prefHeight="668.0" prefWidth="988.0" style="-fx-background-radius: .5em; -fx-background-color: #f6f6f6;" stylesheets="@../stylesheets/styling.css" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
+            <GridPane id="calendarGridPane" alignment="TOP_CENTER" layoutX="32.0" layoutY="26.0" opacity="0.9" prefHeight="668.0" prefWidth="988.0" style="-fx-background-radius: .5em; -fx-background-color: #f6f6f6;" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -320,12 +330,12 @@
             </GridPane>
          </children>
       </AnchorPane>
-      <AnchorPane id="hotelmapPane" fx:id="hotelmapPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" visible="false">
+      <AnchorPane id="hotelmapPane" fx:id="hotelmapPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" stylesheets="@../stylesheets/backgrounds.css" visible="false">
          <effect>
             <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
          </effect>
       </AnchorPane>
-      <AnchorPane id="billingPane" fx:id="billingPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" visible="false">
+      <AnchorPane id="billingPane" fx:id="billingPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" stylesheets="@../stylesheets/backgrounds.css" visible="false">
          <effect>
             <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
          </effect>

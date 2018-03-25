@@ -12,13 +12,13 @@ public class Main extends Application {
 
     private double xOffset = 0;
     private double yOffset = 0;
-//hi friend.
+
     @Override
     public void start(final Stage primaryStage) throws Exception {
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("Images/icons8_Service_Bell_96px.png")));
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/GUI.fxml"));
-        root.getStylesheets().add(this.getClass().getResource("../stylesheets/styling.css").toExternalForm());
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/AdminGUI.fxml"));
+        //root.getStylesheets().add(this.getClass().getResource("../stylesheets/styling.css").toExternalForm());
         primaryStage.setScene(new Scene(root, 1366, 768));
         primaryStage.show();
 

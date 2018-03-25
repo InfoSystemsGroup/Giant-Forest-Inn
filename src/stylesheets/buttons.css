@@ -56,9 +56,25 @@
     -fx-graphic: url("../hotel/Images/icons8_Overview_32px.png");
 }
 
+#btnRoomStatus
+{
+    -fx-graphic-text-gap: 25px;
+    -fx-alignment: center-left;
+    -fx-background-radius: 5px;
+    -fx-graphic: url("../hotel/Images/icons8_Towel_32px.png");
+}
+
+#btnUsers
+{
+    -fx-graphic-text-gap: 25px;
+    -fx-alignment: center-left;
+    -fx-background-radius: 5px;
+    -fx-graphic: url("../hotel/Images/icons8_Registration_32px.png");
+}
+
 #btnClose
 {
-    -fx-background-color: #333333;
+    -fx-background-color: transparent;
     -fx-background-radius: 0px;
     -fx-graphic: url("../hotel/Images/icons8_Delete_22px.png");
 }
@@ -70,7 +86,7 @@
 
 #btnMinimize
 {
-    -fx-background-color: #333333;
+    -fx-background-color: transparent;
     -fx-background-radius: 0px;
     -fx-graphic: url("../hotel/Images/icons8_Subtract_22px.png");
 }
@@ -78,40 +94,4 @@
 #btnMinimize:hover
 {
     -fx-background-color: #3F3F3F;
-}
-
-#dashboardPane
-{
-    -fx-background-image: url("../hotel/Images/forest-background.jpg");
-}
-
-#bookingPane
-{
-    -fx-background-image: url("../hotel/Images/forest-background.jpg");
-}
-
-#guestsPane
-{
-    -fx-background-image: url("../hotel/Images/forest-background.jpg");
-}
-
-#calendarPane
-{
-    -fx-background-image: url("../hotel/Images/forest-background.jpg");
-}
-
-#hotelmapPane
-{
-    -fx-background-image: url("../hotel/Images/forest-background.jpg");
-}
-
-#billingPane
-{
-    -fx-background-image: url("../hotel/Images/forest-background.jpg");
-}
-
-#guestsList
-{
-    -fx-background-radius: .5em .5em .5em .5em;
-    -fx-border-radius: .5em .5em .5em .5em;
 }

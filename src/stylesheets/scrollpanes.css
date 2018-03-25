@@ -1,6 +1,7 @@
 .scroll-pane
 {
     -fx-background-radius: .5em;
+    -fx-border-radius: .5em;
     -fx-border-color: #f6f6f6;
     -fx-padding: 0px;
 }
