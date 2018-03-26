@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+// Primary controller class used for handling action events
 public class MainController implements Initializable {
 
     @FXML
@@ -17,6 +18,7 @@ public class MainController implements Initializable {
     @FXML
     private AnchorPane dashboardPane, bookingPane, guestsPane, calendarPane, hotelmapPane, billingPane;
 
+    // Method handles pane switching on button presses
     @FXML
     public void handleButtonAction(ActionEvent event) {
 
@@ -51,6 +53,7 @@ public class MainController implements Initializable {
         }
     }
 
+    // Method hides all panes
     public void setVisibility() {
 
         dashboardPane.setVisible(false);

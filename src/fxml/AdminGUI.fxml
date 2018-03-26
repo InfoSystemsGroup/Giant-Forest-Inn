@@ -26,8 +26,8 @@
    <children>
       <Pane id="topBorder" prefHeight="32.0" prefWidth="1366.0" style="-fx-background-color: #333333;" AnchorPane.bottomAnchor="736.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button id="btnClose" contentDisplay="GRAPHIC_ONLY" layoutX="1328.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../stylesheets/buttons.css" text="Close" />
-            <Button id="btnMinimize" contentDisplay="GRAPHIC_ONLY" layoutX="1290.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../stylesheets/buttons.css" text="Minimize" />
+            <Button id="btnClose" fx:id="btnClose" contentDisplay="GRAPHIC_ONLY" layoutX="1328.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../stylesheets/buttons.css" text="Close" />
+            <Button id="btnMinimize" fx:id="btnMinimize" contentDisplay="GRAPHIC_ONLY" layoutX="1290.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../stylesheets/buttons.css" text="Minimize" />
          </children>
       </Pane>
       <AnchorPane id="sidePane" layoutY="32.0" prefHeight="736.0" prefWidth="320.0" style="-fx-background-color: #028444;">
