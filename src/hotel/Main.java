@@ -10,17 +10,82 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
+    public static Stage stage;
+
+    private static Parent root;
+
     private double xOffset = 0;
     private double yOffset = 0;
 
-    // Grabs initial FXML file and applies various attributes
+    // Method grabs initial FXML file and applies various attributes
     @Override
-    public void start(final Stage primaryStage) throws Exception {
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("Images/icons8_Service_Bell_96px.png")));
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/AdminGUI.fxml"));
-        primaryStage.setScene(new Scene(root, 1366, 768));
-        primaryStage.show();
+    public void start(final Stage LoginStage) throws Exception {
+
+        stage = LoginStage;
+
+        root = FXMLLoader.load(getClass().getResource("../fxml/LoginGUI.fxml"));
+
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("Images/icons8_Service_Bell_96px.png")));
+        stage.setScene(new Scene(root, 1046, 736));
+        stage.show();
+
+        closeGUI(stage);
+    }
+
+    public void AdminPanel() throws Exception {
+
+        stage.hide();
+
+        Stage Admin = new Stage();
+
+        root = FXMLLoader.load(getClass().getResource("../fxml/AdminGUI.fxml"));
+
+        Admin.initStyle(StageStyle.UNDECORATED);
+        Admin.getIcons().add(new Image(this.getClass().getResourceAsStream("Images/icons8_Service_Bell_96px.png")));
+        Admin.setScene(new Scene(root, 1366, 768));
+        Admin.show();
+
+        moveGUI(Admin);
+        closeGUI(Admin);
+    }
+
+    public void ReceptionistPanel() throws Exception {
+
+        stage.hide();
+
+        Stage Receptionist = new Stage();
+
+        root = FXMLLoader.load(getClass().getResource("../fxml/ReceptionistGUI.fxml"));
+
+        Receptionist.initStyle(StageStyle.UNDECORATED);
+        Receptionist.getIcons().add(new Image(this.getClass().getResourceAsStream("Images/icons8_Service_Bell_96px.png")));
+        Receptionist.setScene(new Scene(root, 1366, 768));
+        Receptionist.show();
+
+        moveGUI(Receptionist);
+        closeGUI(Receptionist);
+    }
+
+    public void HousekeeperPanel() throws Exception {
+
+        stage.hide();
+
+        Stage Housekeeper = new Stage();
+
+        root = FXMLLoader.load(getClass().getResource("../fxml/HousekeeperGUI.fxml"));
+
+        Housekeeper.initStyle(StageStyle.UNDECORATED);
+        Housekeeper.getIcons().add(new Image(this.getClass().getResourceAsStream("Images/icons8_Service_Bell_96px.png")));
+        Housekeeper.setScene(new Scene(root, 1366, 768));
+        Housekeeper.show();
+
+        moveGUI(Housekeeper);
+        closeGUI(Housekeeper);
+    }
+
+    // Method handles dragging GUI
+    public void moveGUI(Stage stage) {
 
         // Grabs coordinates of cursor click on top bar of GUI
         root.lookup("#topBorder").setOnMousePressed(event -> {
@@ -30,15 +95,19 @@ public class Main extends Application {
 
         // Updates coordinates of GUI as mouse is dragged
         root.lookup("#topBorder").setOnMouseDragged(event -> {
-            primaryStage.setX(event.getScreenX() - xOffset);
-            primaryStage.setY(event.getScreenY() - yOffset);
+            stage.setX(event.getScreenX() - xOffset);
+            stage.setY(event.getScreenY() - yOffset);
         });
+    }
+
+    // Method handles closing or iconifying GUI
+    public void closeGUI(Stage stage) {
 
         // Terminates program when close button is pressed
         root.lookup("#btnClose").setOnMousePressed(event -> System.exit(1));
 
         // Iconifies GUI when minimize button is pressed
-        root.lookup("#btnMinimize").setOnMousePressed(event -> primaryStage.setIconified(true));
+        root.lookup("#btnMinimize").setOnMousePressed(event -> stage.setIconified(true));
     }
 
     // Launches the program
