@@ -28,7 +28,7 @@ public class Queries extends LoginController {
             ResultSet rs = clearance.executeQuery();
 
             while (rs.next()) {
-                Clearance = rs.getString("Clearance");
+                   Clearance = rs.getString("Clearance");
             }
 
             connection.close();

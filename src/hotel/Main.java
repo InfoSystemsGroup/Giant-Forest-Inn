@@ -10,32 +10,32 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
-    public static Stage stage;
+    public static Stage loginStage;
 
-    private static Parent root;
+    public static Parent root;
 
     private double xOffset = 0;
     private double yOffset = 0;
 
     // Method grabs initial FXML file and applies various attributes
     @Override
-    public void start(final Stage LoginStage) throws Exception {
+    public void start(final Stage primaryStage) throws Exception {
 
-        stage = LoginStage;
+        loginStage = primaryStage;
 
         root = FXMLLoader.load(getClass().getResource("../fxml/LoginGUI.fxml"));
 
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("Images/icons8_Service_Bell_96px.png")));
-        stage.setScene(new Scene(root, 1046, 736));
-        stage.show();
+        loginStage.initStyle(StageStyle.UNDECORATED);
+        loginStage.getIcons().add(new Image(this.getClass().getResourceAsStream("Images/icons8_Service_Bell_96px.png")));
+        loginStage.setScene(new Scene(root, 1046, 736));
+        loginStage.show();
 
-        closeGUI(stage);
+        closeGUI(loginStage);
     }
 
     public void AdminPanel() throws Exception {
 
-        stage.hide();
+        loginStage.hide();
 
         Stage Admin = new Stage();
 
@@ -52,7 +52,7 @@ public class Main extends Application {
 
     public void ReceptionistPanel() throws Exception {
 
-        stage.hide();
+        loginStage.hide();
 
         Stage Receptionist = new Stage();
 
@@ -69,7 +69,7 @@ public class Main extends Application {
 
     public void HousekeeperPanel() throws Exception {
 
-        stage.hide();
+        loginStage.hide();
 
         Stage Housekeeper = new Stage();
 
