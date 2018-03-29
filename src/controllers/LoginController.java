@@ -9,10 +9,8 @@ import hotel.Queries;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.Objects;
@@ -24,17 +22,16 @@ public class LoginController extends Main implements Initializable {
     public static String Clearance;
 
     @FXML
-    public JFXButton btnSignIn = new JFXButton();
+    public Text errorText = new Text();
 
     @FXML
-    public Text errorText = new Text();
+    public JFXButton btnSignIn = new JFXButton();
 
     @FXML
     public JFXTextField Username = new JFXTextField();
 
     @FXML
     public JFXPasswordField Password = new JFXPasswordField();
-
 
     public void handleButtonAction(ActionEvent event) throws Exception {
 
@@ -44,7 +41,7 @@ public class LoginController extends Main implements Initializable {
             Password.setUnFocusColor(Color.valueOf("#333333"));
 
             Queries Db = new Queries();
-            Db.LoginQuery(Username.getText(), Password.getText());
+            Db.loginQuery(Username.getText(), Password.getText());
 
             Main main = new Main();
 
@@ -61,15 +58,18 @@ public class LoginController extends Main implements Initializable {
             }
 
             if (Objects.equals(Clearance, "Admin")) {
-                main.AdminPanel();
+                reset();
+                main.adminPanel();
             }
 
             else if (Objects.equals(Clearance, "Receptionist")) {
-                main.ReceptionistPanel();
+                reset();
+                main.receptionistPanel();
             }
 
             else if (Objects.equals(Clearance, "Housekeeper")) {
-                main.HousekeeperPanel();
+                reset();
+                main.housekeeperPanel();
             }
 
             else if (Clearance == null && !Username.getText().equals("") && !Password.getText().equals("")) {
@@ -77,6 +77,15 @@ public class LoginController extends Main implements Initializable {
                 errorText.setVisible(true);
             }
         }
+    }
+
+    private void reset() {
+
+        Username.requestFocus();
+        Username.setText("");
+        Password.setText("");
+        Clearance = null;
+        errorText.setVisible(false);
     }
 
     public void initialize(URL url, ResourceBundle rb) {

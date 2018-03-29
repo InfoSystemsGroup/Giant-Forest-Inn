@@ -72,6 +72,20 @@
     -fx-graphic: url("../hotel/Images/icons8_Registration_32px.png");
 }
 
+#btnLogout
+{
+    -fx-graphic-text-gap: 5px;
+    -fx-alignment: center-left;
+    -fx-background-radius: 5px;
+    -fx-graphic: url("../hotel/Images/icons8_Shutdown_24px.png");
+}
+
+#btnLogout:hover
+{
+    -fx-background-color: transparent;
+    -fx-underline: true;
+}
+
 #btnClose
 {
     -fx-background-color: transparent;

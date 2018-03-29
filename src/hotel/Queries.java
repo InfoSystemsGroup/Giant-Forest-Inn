@@ -8,15 +8,16 @@ import javax.swing.*;
 
 public class Queries extends LoginController {
 
-    public static Connection getConnection() throws Exception {
+    // Method handles database connection
+    private static Connection getConnection() throws Exception {
 
         Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-        Connection connection = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/Brandon/Giant-Forest-Inn/Dependencies/Database/Giant_Forest_Inn_Db.accdb");
 
-        return connection;
+        return DriverManager.getConnection("jdbc:ucanaccess://C:/Users/Brandon/Giant-Forest-Inn/Dependencies/Database/Giant_Forest_Inn_Db.accdb");
     }
 
-    public void LoginQuery(String User, String Pass) throws Exception {
+    // Method passes credentials into database and retrieves clearance
+    public void loginQuery(String User, String Pass) throws Exception {
 
         Connection connection = getConnection();
 
@@ -34,7 +35,7 @@ public class Queries extends LoginController {
             connection.close();
         }
 
-        // detect problems interacting with the database
+        // Detect problems interacting with the database
         catch (SQLException sqlException) {
             JOptionPane.showMessageDialog(null,
                     sqlException.getMessage(), "Database Error",

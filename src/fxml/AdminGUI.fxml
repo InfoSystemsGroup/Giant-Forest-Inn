@@ -76,6 +76,11 @@
                   </JFXButton>
                </children>
             </VBox>
+            <Button id="btnLogout" fx:id="btnLogout" layoutX="105.0" layoutY="643.0" mnemonicParsing="false" onAction="#handleButtonAction" stylesheets="@../stylesheets/buttons.css" text="Logout" textFill="#f6f6f6">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Button>
          </children>
          <opaqueInsets>
             <Insets />

@@ -1,5 +1,6 @@
 package controllers;
 
+import hotel.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -10,10 +11,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 // Primary controller class used for handling action events
-public class MainController implements Initializable {
+public class MainController extends Main implements Initializable {
 
     @FXML
-    private Button btnDashboard, btnBooking, btnGuests, btnCalendar, btnHotelMap, btnBilling;
+    private Button btnDashboard, btnBooking, btnGuests, btnCalendar, btnHotelMap, btnBilling, btnLogout;
 
     @FXML
     private AnchorPane dashboardPane, bookingPane, guestsPane, calendarPane, hotelmapPane, billingPane;
@@ -51,10 +52,15 @@ public class MainController implements Initializable {
             setVisibility();
             billingPane.setVisible(true);
         }
+
+        else if (event.getTarget() == btnLogout) {
+            currentStage.hide();
+            loginStage.show();
+        }
     }
 
     // Method hides all panes
-    public void setVisibility() {
+    private void setVisibility() {
 
         dashboardPane.setVisible(false);
         bookingPane.setVisible(false);

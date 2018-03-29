@@ -30,6 +30,7 @@
                </font>
             </JFXButton>
             <Text fx:id="errorText" fill="#e0202f" layoutX="51.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="258.00000751018524" />
+            <Pane id="topBorder" fx:id="topBorder" layoutX="-86.0" layoutY="-86.0" prefHeight="40.0" prefWidth="1046.0" />
          </children>
          <effect>
             <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
