@@ -1,11 +1,10 @@
 package controllers;
 
-
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import hotel.Main;
-import hotel.Queries;
+import queries.LoginQuery;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -33,6 +32,7 @@ public class LoginController extends Main implements Initializable {
     @FXML
     public JFXPasswordField Password = new JFXPasswordField();
 
+    // Method handles login functions and exceptions
     public void handleButtonAction(ActionEvent event) throws Exception {
 
         if (event.getTarget() == btnSignIn) {
@@ -40,7 +40,7 @@ public class LoginController extends Main implements Initializable {
             Username.setUnFocusColor(Color.valueOf("#333333"));
             Password.setUnFocusColor(Color.valueOf("#333333"));
 
-            Queries Db = new Queries();
+            LoginQuery Db = new LoginQuery();
             Db.loginQuery(Username.getText(), Password.getText());
 
             Main main = new Main();
@@ -59,17 +59,17 @@ public class LoginController extends Main implements Initializable {
 
             if (Objects.equals(Clearance, "Admin")) {
                 reset();
-                main.adminPanel();
+                main.adminGUI();
             }
 
             else if (Objects.equals(Clearance, "Receptionist")) {
                 reset();
-                main.receptionistPanel();
+                main.receptionistGUI();
             }
 
             else if (Objects.equals(Clearance, "Housekeeper")) {
                 reset();
-                main.housekeeperPanel();
+                main.housekeeperGUI();
             }
 
             else if (Clearance == null && !Username.getText().equals("") && !Password.getText().equals("")) {
@@ -79,6 +79,7 @@ public class LoginController extends Main implements Initializable {
         }
     }
 
+    // Method resets all login related values
     private void reset() {
 
         Username.requestFocus();

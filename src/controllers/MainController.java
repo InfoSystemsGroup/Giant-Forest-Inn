@@ -13,6 +13,9 @@ import java.util.ResourceBundle;
 // Primary controller class used for handling action events
 public class MainController extends Main implements Initializable {
 
+    //@FXML
+    //private BookingController bookingController;
+
     @FXML
     private Button btnDashboard, btnBooking, btnGuests, btnCalendar, btnHotelMap, btnBilling, btnLogout;
 
@@ -72,5 +75,6 @@ public class MainController extends Main implements Initializable {
 
     public void initialize(URL url, ResourceBundle rb) {
 
+        //bookingController.injectMainController(this);
     }
 }

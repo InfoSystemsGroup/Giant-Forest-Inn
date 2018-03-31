@@ -61,7 +61,7 @@
                         </JFXButton>
                     </children>
                 </VBox>
-            <Button id="btnLogout" fx:id="btnLogout" layoutX="105.0" layoutY="632.0" mnemonicParsing="false" onAction="#handleButtonAction" stylesheets="@../stylesheets/buttons.css" text="Logout" textFill="#f6f6f6" AnchorPane.bottomAnchor="57.0" AnchorPane.topAnchor="643.0">
+            <Button id="btnLogout" fx:id="btnLogout" layoutX="105.0" layoutY="632.0" mnemonicParsing="false" onAction="#handleButtonAction" stylesheets="@../stylesheets/buttons.css" text="Logout" textFill="#f6f6f6" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="113.0" AnchorPane.topAnchor="643.0">
                <font>
                   <Font name="Segoe UI" size="18.0" />
                </font>

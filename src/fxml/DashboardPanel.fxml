@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="dashboardPane" fx:id="dashboardPane" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../stylesheets/backgrounds.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <children>
+      <Pane layoutX="32.0" layoutY="32.0" opacity="0.9" prefHeight="165.0" prefWidth="276.0" style="-fx-background-color: #DA534F; -fx-background-radius: .5em;" AnchorPane.bottomAnchor="539.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="708.0" AnchorPane.topAnchor="32.0">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="192.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../hotel/Images/icons8_Bed_100px_1.png" />
+               </image>
+            </ImageView>
+            <Text fill="#f6f6f6" layoutX="14.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rooms" textAlignment="CENTER" wrappingWidth="172.0">
+               <font>
+                  <Font name="Segoe UI Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text fill="#f6f6f6" layoutX="14.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50" textAlignment="CENTER" wrappingWidth="172.0">
+               <font>
+                  <Font name="Segoe UI Bold" size="48.0" />
+               </font>
+            </Text>
+         </children>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
+         </effect>
+      </Pane>
+      <Pane layoutX="708.0" layoutY="32.0" opacity="0.9" prefHeight="165.0" prefWidth="275.0" style="-fx-background-color: #1BAE9B; -fx-background-radius: .5em;" AnchorPane.leftAnchor="708.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="192.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../hotel/Images/icons8_Ticket_Purchase_100px.png" />
+               </image>
+            </ImageView>
+            <Text fill="#f6f6f6" layoutX="14.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bookings" textAlignment="CENTER" wrappingWidth="172.0">
+               <font>
+                  <Font name="Segoe UI Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text fill="#f6f6f6" layoutX="14.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="45" textAlignment="CENTER" wrappingWidth="172.0">
+               <font>
+                  <Font name="Segoe UI Bold" size="48.0" />
+               </font>
+            </Text>
+         </children>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
+         </effect>
+      </Pane>
+      <Pane layoutX="370.0" layoutY="32.0" opacity="0.9" prefHeight="165.0" prefWidth="275.0" style="-fx-background-color: #E9A051; -fx-background-radius: .5em;" AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="370.0">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="196.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../hotel/Images/icons8_Family_100px.png" />
+               </image>
+            </ImageView>
+            <Text fill="#f6f6f6" layoutX="18.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guests" textAlignment="CENTER" wrappingWidth="172.0">
+               <font>
+                  <Font name="Segoe UI Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text fill="#f6f6f6" layoutX="18.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15" textAlignment="CENTER" wrappingWidth="172.0">
+               <font>
+                  <Font name="Segoe UI Bold" size="48.0" />
+               </font>
+            </Text>
+         </children>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
+         </effect>
+      </Pane>
+      <TableView layoutX="32.0" layoutY="255.0" opacity="0.9" prefHeight="426.0" prefWidth="475.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: .5em;">
+         <columns>
+            <TableColumn prefWidth="75.0" text="C1" />
+            <TableColumn prefWidth="75.0" text="C2" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
+         </effect>
+      </TableView>
+      <PieChart layoutX="539.0" layoutY="255.0" opacity="0.9" prefHeight="426.0" prefWidth="475.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: .5em;">
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
+         </effect>
+      </PieChart>
+   </children>
+   <effect>
+      <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
+   </effect>
+</AnchorPane>

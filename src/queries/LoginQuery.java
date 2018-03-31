@@ -1,4 +1,4 @@
-package hotel;
+package queries;
 
 import controllers.LoginController;
 
@@ -6,7 +6,7 @@ import java.sql.*;
 
 import javax.swing.*;
 
-public class Queries extends LoginController {
+public class LoginQuery extends LoginController {
 
     // Method handles database connection
     private static Connection getConnection() throws Exception {
