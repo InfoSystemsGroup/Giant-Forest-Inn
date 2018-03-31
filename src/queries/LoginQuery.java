@@ -13,7 +13,7 @@ public class LoginQuery extends LoginController {
 
         Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
-        return DriverManager.getConnection("jdbc:ucanaccess://C:/Users/Brandon/Giant-Forest-Inn/Dependencies/Database/Giant_Forest_Inn_Db.accdb");
+        return DriverManager.getConnection("jdbc:ucanaccess://C:/IntelliJ Projects/Giant-Forest-Inn/Dependencies/Database/Giant_Forest_Inn_Db.accdb");
     }
 
     // Method passes credentials into database and retrieves clearance

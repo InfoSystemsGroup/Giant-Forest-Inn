@@ -53,4 +53,3 @@ public class BookingController implements Initializable {
         bookingTable.setItems(data);
     }
 }
-
