@@ -1,4 +1,4 @@
-package hotel;
+package hotel.main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -22,11 +22,11 @@ public class Main extends Application {
     @Override
     public void start(final Stage primaryStage) throws Exception {
 
-        root = FXMLLoader.load(getClass().getResource("../fxml/LoginGUI.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../fxml/primary/LoginGUI.fxml"));
 
         loginStage = primaryStage;
         loginStage.initStyle(StageStyle.UNDECORATED);
-        loginStage.getIcons().add(new Image(this.getClass().getResourceAsStream("Images/icons8_Service_Bell_96px.png")));
+        loginStage.getIcons().add(new Image(this.getClass().getResourceAsStream("../images/icons8_Service_Bell_96px.png")));
         loginStage.setScene(new Scene(root, 1046, 736));
         loginStage.show();
 
@@ -39,11 +39,11 @@ public class Main extends Application {
 
         loginStage.hide();
 
-        root = FXMLLoader.load(getClass().getResource("../fxml/AdminGUI.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../fxml/primary/AdminGUI.fxml"));
 
         currentStage = new Stage();
         currentStage.initStyle(StageStyle.UNDECORATED);
-        currentStage.getIcons().add(new Image(this.getClass().getResourceAsStream("Images/icons8_Service_Bell_96px.png")));
+        currentStage.getIcons().add(new Image(this.getClass().getResourceAsStream("../images/icons8_Service_Bell_96px.png")));
         currentStage.setScene(new Scene(root, 1366, 768));
         currentStage.show();
 
@@ -56,11 +56,11 @@ public class Main extends Application {
 
         loginStage.hide();
 
-        root = FXMLLoader.load(getClass().getResource("../fxml/ReceptionistGUI.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../fxml/primary/ReceptionistGUI.fxml"));
 
         currentStage = new Stage();
         currentStage.initStyle(StageStyle.UNDECORATED);
-        currentStage.getIcons().add(new Image(this.getClass().getResourceAsStream("Images/icons8_Service_Bell_96px.png")));
+        currentStage.getIcons().add(new Image(this.getClass().getResourceAsStream("../images/icons8_Service_Bell_96px.png")));
         currentStage.setScene(new Scene(root, 1366, 768));
         currentStage.show();
 
@@ -73,11 +73,11 @@ public class Main extends Application {
 
         loginStage.hide();
 
-        root = FXMLLoader.load(getClass().getResource("../fxml/HousekeeperGUI.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../fxml/primary/HousekeeperGUI.fxml"));
 
         currentStage = new Stage();
         currentStage.initStyle(StageStyle.UNDECORATED);
-        currentStage.getIcons().add(new Image(this.getClass().getResourceAsStream("Images/icons8_Service_Bell_96px.png")));
+        currentStage.getIcons().add(new Image(this.getClass().getResourceAsStream("../images/icons8_Service_Bell_96px.png")));
         currentStage.setScene(new Scene(root, 1366, 768));
         currentStage.show();
 

@@ -6,13 +6,12 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="bookingPane" fx:id="bookingPane" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../stylesheets/backgrounds.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BookingController">
+<AnchorPane id="bookingPane" fx:id="bookingPane" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../../stylesheets/backgrounds.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.controllers.secondary.BookingController">
    <children>
       <Pane layoutX="289.0" layoutY="113.0" opacity="0.9" prefHeight="255.0" prefWidth="469.0" style="-fx-background-color: #ffffff; -fx-background-radius: .5em;" visible="false" AnchorPane.bottomAnchor="368.0" AnchorPane.topAnchor="113.0">
          <effect>
@@ -28,19 +27,19 @@
             <JFXDatePicker defaultColor="#028444" layoutX="85.0" layoutY="167.0" opacity="0.9" prefHeight="40.0" prefWidth="300.0" promptText="Choose a check out date" />
          </children>
       </Pane>
-      <JFXButton buttonType="RAISED" layoutX="833.0" layoutY="648.0" prefHeight="43.0" prefWidth="70.0" stylesheets="@../stylesheets/buttons.css" text="Back" textFill="#f6f6f6" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="833.0" AnchorPane.topAnchor="648.0">
+      <JFXButton buttonType="RAISED" layoutX="833.0" layoutY="648.0" prefHeight="43.0" prefWidth="70.0" stylesheets="@../../stylesheets/buttons.css" text="Back" textFill="#f6f6f6" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="833.0" AnchorPane.topAnchor="648.0">
          <font>
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="911.0" layoutY="648.0" prefHeight="43.0" prefWidth="70.0" stylesheets="@../stylesheets/buttons.css" text="Next" textFill="#f6f6f6" AnchorPane.bottomAnchor="45.0" AnchorPane.rightAnchor="65.0">
+      <JFXButton buttonType="RAISED" layoutX="911.0" layoutY="648.0" prefHeight="43.0" prefWidth="70.0" stylesheets="@../../stylesheets/buttons.css" text="Next" textFill="#f6f6f6" AnchorPane.bottomAnchor="45.0" AnchorPane.rightAnchor="65.0">
          <font>
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <ScrollPane hbarPolicy="NEVER" layoutX="46.0" layoutY="41.0" opacity="0.9" prefHeight="573.0" prefWidth="982.0" stylesheets="@../stylesheets/scrollpanes.css" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
+      <ScrollPane hbarPolicy="NEVER" layoutX="46.0" layoutY="41.0" opacity="0.9" prefHeight="573.0" prefWidth="982.0" stylesheets="@../../stylesheets/scrollpanes.css" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
          <content>
-            <TableView id="bookingTable" fx:id="bookingTable" prefHeight="651.0" prefWidth="981.0" stylesheets="@../stylesheets/tableview.css" tableMenuButtonVisible="true">
+            <TableView id="bookingTable" fx:id="bookingTable" prefHeight="651.0" prefWidth="981.0" stylesheets="@../../stylesheets/tableview.css" tableMenuButtonVisible="true">
                <columns>
                   <TableColumn fx:id="roomCheckbox" editable="false" prefWidth="50.0" resizable="false" sortable="false" />
                   <TableColumn fx:id="roomCategory" editable="false" maxWidth="155.0" prefWidth="155.0" resizable="false" text="Room Category" />
@@ -54,7 +53,4 @@
          </content>
       </ScrollPane>
    </children>
-   <effect>
-      <InnerShadow color="#0000003f" height="255.0" radius="127.0" width="255.0" />
-   </effect>
 </AnchorPane>

@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="loginPane" prefHeight="736.0" prefWidth="1046.0" stylesheets="@../stylesheets/backgrounds.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<AnchorPane id="loginPane" prefHeight="736.0" prefWidth="1046.0" stylesheets="@../../stylesheets/backgrounds.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.controllers.primary.LoginController">
    <children>
       <Pane layoutX="85.0" layoutY="81.0" opacity="0.9" prefHeight="575.0" prefWidth="360.0" style="-fx-background-color: #f6f6f6; -fx-background-radius: .5em;" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="85.0">
          <children>
@@ -26,7 +26,7 @@
                   <Font size="14.0" />
                </font>
             </JFXPasswordField>
-            <JFXButton id="btnSignIn" fx:id="btnSignIn" focusTraversable="false" layoutX="51.0" layoutY="410.0" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="258.0" stylesheets="@../stylesheets/buttons.css" text="Sign In" textFill="#f6f6f6">
+            <JFXButton id="btnSignIn" fx:id="btnSignIn" focusTraversable="false" layoutX="51.0" layoutY="410.0" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="258.0" stylesheets="@../../stylesheets/buttons.css" text="Sign In" textFill="#f6f6f6">
                <font>
                   <Font name="Segoe UI" size="18.0" />
                </font>
@@ -35,7 +35,7 @@
             <Pane id="topBorder" fx:id="topBorder" layoutX="-86.0" layoutY="-86.0" prefHeight="40.0" prefWidth="1046.0" />
             <ImageView fitHeight="130.0" fitWidth="300.0" layoutX="30.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../hotel/Images/GFI_Logo_G.png" />
+                  <Image url="@../../images/GFI_Logo_G.png" />
                </image>
             </ImageView>
          </children>
@@ -43,7 +43,7 @@
             <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
          </effect>
       </Pane>
-      <Button id="btnClose" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="1001.0" layoutY="7.0" mnemonicParsing="false" stylesheets="@../stylesheets/buttons.css" text="Button" />
-      <Button id="btnMinimize" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="963.0" layoutY="7.0" mnemonicParsing="false" stylesheets="@../stylesheets/buttons.css" text="Button" />
+      <Button id="btnClose" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="1001.0" layoutY="7.0" mnemonicParsing="false" stylesheets="@../../stylesheets/buttons.css" text="Button" />
+      <Button id="btnMinimize" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="963.0" layoutY="7.0" mnemonicParsing="false" stylesheets="@../../stylesheets/buttons.css" text="Button" />
    </children>
 </AnchorPane>

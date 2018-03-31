@@ -1,6 +1,6 @@
-package controllers;
+package hotel.controllers.secondary;
 
-import hotel.Rooms;
+import hotel.main.Rooms;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

@@ -1,10 +1,10 @@
-package controllers;
+package hotel.controllers.primary;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import hotel.Main;
-import queries.LoginQuery;
+import hotel.main.Main;
+import hotel.queries.LoginQuery;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

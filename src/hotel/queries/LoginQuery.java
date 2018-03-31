@@ -1,6 +1,6 @@
-package queries;
+package hotel.queries;
 
-import controllers.LoginController;
+import hotel.controllers.primary.LoginController;
 
 import java.sql.*;
 

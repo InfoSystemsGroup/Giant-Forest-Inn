@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="bgPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.controllers.primary.ReceptionistController">
+   <children>
+      <AnchorPane id="topBorder" prefHeight="32.0" prefWidth="1366.0" style="-fx-background-color: #333333;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button id="btnClose" fx:id="btnClose" contentDisplay="GRAPHIC_ONLY" layoutX="1328.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../../stylesheets/buttons.css" text="Close" />
+            <Button id="btnMinimize" fx:id="btnMinimize" contentDisplay="GRAPHIC_ONLY" layoutX="1290.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../../stylesheets/buttons.css" text="Minimize" />
+         </children>
+      </AnchorPane>
+      <AnchorPane id="sidePane" layoutY="32.0" prefHeight="736.0" prefWidth="320.0" style="-fx-background-color: #028444;">
+         <children>
+            <VBox layoutX="10.0" layoutY="160.0" prefHeight="385.0" prefWidth="300.0" spacing="1.0">
+               <children>
+                  <JFXButton id="btnDashboard" fx:id="btnDashboard" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Dashboard" textFill="#f6f6f6">
+                     <font>
+                        <Font name="Segoe UI" size="22.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="btnBooking" fx:id="btnBooking" layoutX="10.0" layoutY="10.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Booking" textFill="#f6f6f6">
+                     <font>
+                        <Font name="Segoe UI" size="22.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="btnGuests" fx:id="btnGuests" layoutX="10.0" layoutY="66.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Guests" textFill="#f6f6f6">
+                     <font>
+                        <Font name="Segoe UI" size="22.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="btnCalendar" fx:id="btnCalendar" layoutX="10.0" layoutY="122.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Calendar" textFill="#f6f6f6">
+                     <font>
+                        <Font name="Segoe UI" size="22.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="btnBilling" fx:id="btnBilling" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Billing" textFill="#f6f6f6">
+                     <font>
+                        <Font name="Segoe UI" size="22.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="btnRoomStatus" fx:id="btnRoomStatus" layoutX="10.0" layoutY="234.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Room Status" textFill="#f6f6f6">
+                     <font>
+                        <Font name="Segoe UI" size="22.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton id="btnHotelMap" fx:id="btnHotelMap" layoutX="10.0" layoutY="178.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Hotel Map" textFill="#f6f6f6">
+                     <font>
+                        <Font name="Segoe UI" size="22.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <Button id="btnLogout" fx:id="btnLogout" layoutX="97.0" layoutY="643.0" mnemonicParsing="false" onAction="#handleButtonAction" stylesheets="@../../stylesheets/buttons.css" text="Logout" textFill="#f6f6f6" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="113.0" AnchorPane.topAnchor="643.0">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="126.0" fitWidth="250.0" layoutX="35.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/GFI_Logo_W.png" />
+               </image>
+            </ImageView>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane id="dashboardPane" fx:id="dashboardPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../../stylesheets/backgrounds.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+         <children>
+            <fx:include fx:id="dashboardPanel" source="../secondary/DashboardPanel.fxml" />
+         </children>
+      </AnchorPane>
+      <AnchorPane id="bookingPane" fx:id="bookingPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../../stylesheets/backgrounds.css" visible="false">
+         <children>
+            <fx:include fx:id="bookingPanel" source="../secondary/BookingPanel.fxml" />
+         </children>
+      </AnchorPane>
+      <AnchorPane id="guestsPane" fx:id="guestsPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../../stylesheets/backgrounds.css" visible="false">
+         <children>
+            <fx:include fx:id="guestsPanel" source="../secondary/GuestsPanel.fxml" />
+         </children>
+      </AnchorPane>
+      <AnchorPane id="calendarPane" fx:id="calendarPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" stylesheets="@../../stylesheets/backgrounds.css" visible="false">
+         <children>
+            <fx:include fx:id="calendarPanel" source="../secondary/CalendarPanel.fxml" />
+         </children>
+      </AnchorPane>
+      <AnchorPane id="billingPane" fx:id="billingPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" stylesheets="@../../stylesheets/backgrounds.css" visible="false">
+         <children>
+            <fx:include source="../secondary/BillingPanel.fxml" />
+         </children>
+      </AnchorPane>
+      <AnchorPane id="roomstatusPane" fx:id="roomstatusPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" visible="false">
+         <children>
+            <fx:include source="../secondary/RoomStatusPanel.fxml" />
+         </children></AnchorPane>
+      <AnchorPane id="hotelmapPane" fx:id="hotelmapPane" layoutX="320.0" layoutY="32.0" prefHeight="736.0" prefWidth="1046.0" stylesheets="@../../stylesheets/backgrounds.css" visible="false">
+         <children>
+            <fx:include source="../secondary/HotelMapPanel.fxml" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

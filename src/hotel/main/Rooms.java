@@ -1,4 +1,4 @@
-package hotel;
+package hotel.main;
 
 import javafx.beans.property.SimpleStringProperty;
 

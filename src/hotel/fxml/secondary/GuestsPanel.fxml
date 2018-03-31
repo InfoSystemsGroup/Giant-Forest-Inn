@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="guestsPane" fx:id="guestsPane" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../../stylesheets/backgrounds.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane id="guestsList" hbarPolicy="NEVER" opacity="0.7" pannable="true" prefHeight="704.0" prefViewportHeight="650.0" prefViewportWidth="963.0" prefWidth="549.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../../stylesheets/scrollpanes.css" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" color="#00000026" />
+         </effect>
+         <content>
+            <ListView opacity="0.7" prefHeight="788.0" prefWidth="981.0" style="-fx-background-radius: .5em; -fx-background-color: transparent; -fx-border-color: transparent;" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
