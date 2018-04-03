@@ -13,57 +13,57 @@
    <children>
       <AnchorPane id="topBorder" prefHeight="32.0" prefWidth="1366.0" style="-fx-background-color: #333333;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button id="btnClose" fx:id="btnClose" contentDisplay="GRAPHIC_ONLY" layoutX="1328.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../../stylesheets/buttons.css" text="Close" />
-            <Button id="btnMinimize" fx:id="btnMinimize" contentDisplay="GRAPHIC_ONLY" layoutX="1290.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../../stylesheets/buttons.css" text="Minimize" />
+            <Button id="btnClose" fx:id="btnClose" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="1328.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../../stylesheets/buttons.css" text="Close" />
+            <Button id="btnMinimize" fx:id="btnMinimize" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="1290.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" stylesheets="@../../stylesheets/buttons.css" text="Minimize" />
          </children>
       </AnchorPane>
       <AnchorPane id="sidePane" layoutY="32.0" prefHeight="736.0" prefWidth="320.0" style="-fx-background-color: #028444;">
          <children>
             <VBox layoutX="10.0" layoutY="160.0" prefHeight="440.0" prefWidth="300.0" spacing="1.0">
                <children>
-                  <JFXButton id="btnDashboard" fx:id="btnDashboard" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Dashboard" textFill="#f6f6f6">
+                  <JFXButton id="btnDashboard" fx:id="btnDashboard" focusTraversable="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Dashboard" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="btnBooking" fx:id="btnBooking" layoutX="10.0" layoutY="10.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Booking" textFill="#f6f6f6">
+                  <JFXButton id="btnBooking" fx:id="btnBooking" focusTraversable="false" layoutX="10.0" layoutY="10.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Booking" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="btnGuests" fx:id="btnGuests" layoutX="10.0" layoutY="66.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Guests" textFill="#f6f6f6">
+                  <JFXButton id="btnGuests" fx:id="btnGuests" focusTraversable="false" layoutX="10.0" layoutY="66.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Guests" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="btnCalendar" fx:id="btnCalendar" layoutX="10.0" layoutY="122.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Calendar" textFill="#f6f6f6">
+                  <JFXButton id="btnCalendar" fx:id="btnCalendar" focusTraversable="false" layoutX="10.0" layoutY="122.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Calendar" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="btnBilling" fx:id="btnBilling" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Billing" textFill="#f6f6f6">
+                  <JFXButton id="btnBilling" fx:id="btnBilling" focusTraversable="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Billing" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="btnRoomStatus" fx:id="btnRoomStatus" layoutX="10.0" layoutY="234.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Room Status" textFill="#f6f6f6">
+                  <JFXButton id="btnRoomStatus" fx:id="btnRoomStatus" focusTraversable="false" layoutX="10.0" layoutY="234.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Room Status" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="btnHotelMap" fx:id="btnHotelMap" layoutX="10.0" layoutY="178.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Hotel Map" textFill="#f6f6f6">
+                  <JFXButton id="btnHotelMap" fx:id="btnHotelMap" focusTraversable="false" layoutX="10.0" layoutY="178.0" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Hotel Map" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="btnUsers" fx:id="btnUsers" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Users" textFill="#f6f6f6">
+                  <JFXButton id="btnUsers" fx:id="btnUsers" focusTraversable="false" onAction="#handleButtonAction" prefHeight="55.0" prefWidth="309.0" stylesheets="@../../stylesheets/buttons.css" text="Users" textFill="#f6f6f6">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </JFXButton>
                </children>
             </VBox>
-            <Button id="btnLogout" fx:id="btnLogout" layoutX="97.0" layoutY="643.0" mnemonicParsing="false" onAction="#handleButtonAction" stylesheets="@../../stylesheets/buttons.css" text="Logout" textFill="#f6f6f6" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="113.0" AnchorPane.topAnchor="643.0">
+            <Button id="btnLogout" fx:id="btnLogout" focusTraversable="false" layoutX="97.0" layoutY="643.0" mnemonicParsing="false" onAction="#handleButtonAction" stylesheets="@../../stylesheets/buttons.css" text="Logout" textFill="#f6f6f6" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="113.0" AnchorPane.topAnchor="643.0">
                <font>
                   <Font name="Segoe UI" size="18.0" />
                </font>

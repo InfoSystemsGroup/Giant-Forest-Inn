@@ -57,7 +57,7 @@
             <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
          </effect>
       </Pane>
-      <Pane layoutX="370.0" layoutY="32.0" opacity="0.9" prefHeight="165.0" prefWidth="275.0" style="-fx-background-color: #E9A051; -fx-background-radius: .5em;" AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="370.0">
+      <Pane layoutX="370.0" layoutY="32.0" opacity="0.9" prefHeight="165.0" prefWidth="275.0" style="-fx-background-color: #E9A051; -fx-background-radius: .5em;" AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="370.0" AnchorPane.topAnchor="32.0">
          <children>
             <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="196.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -79,7 +79,7 @@
             <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
          </effect>
       </Pane>
-      <TableView layoutX="32.0" layoutY="255.0" opacity="0.9" prefHeight="426.0" prefWidth="475.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: .5em;">
+      <TableView layoutX="32.0" layoutY="255.0" opacity="0.9" prefHeight="475.0" prefWidth="475.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: .5em;" stylesheets="@../../stylesheets/tableviews.css" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="32.0">
          <columns>
             <TableColumn prefWidth="75.0" text="C1" />
             <TableColumn prefWidth="75.0" text="C2" />
@@ -91,7 +91,7 @@
             <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
          </effect>
       </TableView>
-      <PieChart layoutX="539.0" layoutY="255.0" opacity="0.9" prefHeight="426.0" prefWidth="475.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: .5em;">
+      <PieChart layoutX="539.0" layoutY="255.0" opacity="0.9" prefHeight="475.0" prefWidth="475.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: .5em;" AnchorPane.bottomAnchor="32.0" AnchorPane.rightAnchor="32.0">
          <effect>
             <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
          </effect>
