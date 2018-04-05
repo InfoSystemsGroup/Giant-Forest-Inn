@@ -10,18 +10,16 @@ public class Rooms {
     private SimpleStringProperty Type;
     private SimpleStringProperty Location;
     private SimpleStringProperty Sleeps;
-    private SimpleStringProperty Available;
     private SimpleStringProperty Price;
     private CheckBox Select;
 
-    public Rooms(String Number, String Category, String Type, String Location, String Sleeps, String Available, String Price) {
+    public Rooms(String Number, String Category, String Type, String Location, String Sleeps, String Price) {
 
         this.Number = new SimpleStringProperty(Number);
         this.Category = new SimpleStringProperty(Category);
         this.Type = new SimpleStringProperty(Type);
         this.Location = new SimpleStringProperty(Location);
         this.Sleeps = new SimpleStringProperty(Sleeps);
-        this.Available = new SimpleStringProperty(Available);
         this.Price = new SimpleStringProperty(Price);
         this.Select = new CheckBox();
     }
@@ -64,14 +62,6 @@ public class Rooms {
 
     public void setSleeps(String Sleeps) {
         this.Sleeps.set(Sleeps);
-    }
-
-    public String getAvailable() {
-        return Available.get();
-    }
-
-    public void setAvailable(String Available) {
-        this.Available.set(Available);
     }
 
     public String getPrice() {

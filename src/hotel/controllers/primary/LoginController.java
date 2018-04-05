@@ -7,16 +7,13 @@ import hotel.main.Main;
 import hotel.queries.LoginQuery;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
-import java.net.URL;
 import java.util.Objects;
-import java.util.ResourceBundle;
 
 // Controller class used for LoginGUI.fxml
-public class LoginController extends Main implements Initializable {
+public class LoginController extends Main {
 
     public static String Clearance;
 
@@ -87,9 +84,5 @@ public class LoginController extends Main implements Initializable {
         Password.setText("");
         Clearance = null;
         errorText.setVisible(false);
-    }
-
-    public void initialize(URL url, ResourceBundle rb) {
-
     }
 }

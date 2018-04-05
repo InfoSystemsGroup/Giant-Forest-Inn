@@ -18,7 +18,7 @@ public class Main extends Application {
     private double xOffset = 0;
     private double yOffset = 0;
 
-    // Method loads LoginGUI FXML file and applies various attributes
+    // Method loads LoginGUI.fxml and applies various attributes
     @Override
     public void start(final Stage primaryStage) throws Exception {
 
@@ -34,46 +34,34 @@ public class Main extends Application {
         closeGUI(loginStage);
     }
 
-    // Method hides LoginGUI, loads AdminGUI FXML file and applies various attributes
+    // Method loads AdminGUI.fxml
     public void adminGUI() throws Exception {
-
-        loginStage.hide();
 
         root = FXMLLoader.load(getClass().getResource("../fxml/primary/AdminGUI.fxml"));
 
-        currentStage = new Stage();
-        currentStage.initStyle(StageStyle.UNDECORATED);
-        currentStage.getIcons().add(new Image(this.getClass().getResourceAsStream("../images/icons8_Service_Bell_96px.png")));
-        currentStage.setScene(new Scene(root, 1366, 768));
-        currentStage.show();
-
-        moveGUI(currentStage);
-        closeGUI(currentStage);
+        setScene();
     }
 
-    // Method hides LoginGUI, loads ReceptionistGUI FXML file and applies various attributes
+    // Method loads ReceptionistGUI.fxml
     public void receptionistGUI() throws Exception {
-
-        loginStage.hide();
 
         root = FXMLLoader.load(getClass().getResource("../fxml/primary/ReceptionistGUI.fxml"));
 
-        currentStage = new Stage();
-        currentStage.initStyle(StageStyle.UNDECORATED);
-        currentStage.getIcons().add(new Image(this.getClass().getResourceAsStream("../images/icons8_Service_Bell_96px.png")));
-        currentStage.setScene(new Scene(root, 1366, 768));
-        currentStage.show();
-
-        moveGUI(currentStage);
-        closeGUI(currentStage);
+        setScene();
     }
 
-    // Method hides LoginGUI, loads HousekeeperGUI FXML file and applies various attributes
+    // Method loads HousekeeperGUI.fxml
     public void housekeeperGUI() throws Exception {
 
-        loginStage.hide();
-
         root = FXMLLoader.load(getClass().getResource("../fxml/primary/HousekeeperGUI.fxml"));
+
+        setScene();
+    }
+
+    // Method hides Login GUI and applies various attributes to the current stage
+    public void setScene() {
+
+        loginStage.hide();
 
         currentStage = new Stage();
         currentStage.initStyle(StageStyle.UNDECORATED);
@@ -101,7 +89,7 @@ public class Main extends Application {
         });
     }
 
-    // Method handles closing or iconifying GUI
+    // Method handles closing and iconifying GUI
     private void closeGUI(Stage stage) {
 
         // Terminates program when close button is pressed
