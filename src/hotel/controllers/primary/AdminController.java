@@ -2,16 +2,12 @@ package hotel.controllers.primary;
 
 import hotel.main.Main;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.event.ActionEvent;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 // Primary controller class used for handling action events
-public class AdminController extends Main implements Initializable {
+public class AdminController extends Main {
 
     @FXML
     private Button btnDashboard, btnBooking, btnGuests, btnCalendar, btnHotelMap, btnBilling, btnRoomStatus, btnUsers, btnLogout;
@@ -72,9 +68,5 @@ public class AdminController extends Main implements Initializable {
         billingPane.setVisible(false);
         roomstatusPane.setVisible(false);
         usersPane.setVisible(false);
-    }
-
-    public void initialize(URL url, ResourceBundle rb) {
-
     }
 }

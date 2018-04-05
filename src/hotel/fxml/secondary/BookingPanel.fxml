@@ -30,14 +30,14 @@
                   <VBox spacing="30.0">
                      <children>
                         <JFXDatePicker defaultColor="#028444" opacity="0.9" prefHeight="40.0" prefWidth="258.0" promptText="Choose a check in date" />
-                        <JFXComboBox focusColor="#028444" opacity="0.9" prefHeight="40.0" prefWidth="258.0" promptText="Choose room category" unFocusColor="#333333" />
-                        <JFXComboBox focusColor="#028444" opacity="0.9" prefHeight="40.0" prefWidth="258.0" promptText="Choose room location" unFocusColor="#333333" />
+                        <JFXComboBox fx:id="categoryBox" focusColor="#028444" labelFloat="true" opacity="0.9" prefHeight="40.0" prefWidth="258.0" promptText="Choose room category" unFocusColor="#333333" />
+                        <JFXComboBox fx:id="locationBox" focusColor="#028444" opacity="0.9" prefHeight="40.0" prefWidth="258.0" promptText="Choose room location" unFocusColor="#333333" />
                      </children>
                   </VBox>
                   <VBox spacing="30.0">
                      <children>
                         <JFXDatePicker defaultColor="#028444" opacity="0.9" prefHeight="40.0" prefWidth="258.0" promptText="Choose a check out date" />
-                        <JFXComboBox focusColor="#028444" opacity="0.9" prefHeight="40.0" prefWidth="258.0" promptText="Choose room type" unFocusColor="#333333" />
+                        <JFXComboBox fx:id="typeBox" focusColor="#028444" opacity="0.9" prefHeight="40.0" prefWidth="258.0" promptText="Choose room type" unFocusColor="#333333" />
                         <JFXComboBox focusColor="#028444" opacity="0.9" prefHeight="40.0" prefWidth="258.0" promptText="Number of guests" unFocusColor="#333333" />
                      </children>
                   </VBox>
@@ -50,26 +50,25 @@
             </JFXButton>
          </children>
       </Pane>
-      <JFXButton fx:id="btnBack" focusTraversable="false" layoutX="833.0" layoutY="648.0" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="70.0" stylesheets="@../../stylesheets/buttons.css" text="Back" textFill="#f6f6f6" visible="false" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="833.0" AnchorPane.topAnchor="648.0">
+      <JFXButton fx:id="btnBack" focusTraversable="false" layoutX="833.0" layoutY="648.0" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="70.0" stylesheets="@../../stylesheets/buttons.css" text="Back" textFill="#f6f6f6" visible="false" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="833.0">
          <font>
             <Font size="18.0" />
          </font>
       </JFXButton>
       <JFXButton fx:id="btnNext" focusTraversable="false" layoutX="911.0" layoutY="648.0" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="70.0" stylesheets="@../../stylesheets/buttons.css" text="Next" textFill="#f6f6f6" visible="false" AnchorPane.bottomAnchor="48.0" AnchorPane.rightAnchor="65.0">
          <font>
-            <Font size="18.0" />
+            <Font name="Segoe UI" size="18.0" />
          </font>
       </JFXButton>
       <TableView id="bookingTable" fx:id="bookingTable" layoutX="32.0" layoutY="31.0" opacity="0.9" prefHeight="573.0" prefWidth="982.0" style="-fx-background-color: #f6f6f6; -fx-background-radius: .5em;" stylesheets="@../../stylesheets/tableviews.css" visible="false" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
          <columns>
             <TableColumn fx:id="roomSelect" editable="false" prefWidth="50.0" resizable="false" sortable="false" text="Select" />
-            <TableColumn fx:id="roomNumber" editable="false" maxWidth="155.0" prefWidth="133.0" resizable="false" text="Room Number" />
-            <TableColumn fx:id="roomCategory" editable="false" maxWidth="155.0" prefWidth="133.0" resizable="false" text="Room Category" />
-            <TableColumn fx:id="roomType" editable="false" maxWidth="155.0" prefWidth="133.0" resizable="false" text="Room Type" />
-            <TableColumn fx:id="roomLocation" editable="false" maxWidth="155.0" prefWidth="133.0" resizable="false" text="Location" />
-            <TableColumn fx:id="roomSleeps" editable="false" maxWidth="155.0" prefWidth="133.0" resizable="false" text="Sleeps" />
-            <TableColumn fx:id="roomAvailability" editable="false" maxWidth="155.0" prefWidth="133.0" resizable="false" text="Number Available" />
-            <TableColumn fx:id="roomPrice" editable="false" maxWidth="155.0" prefWidth="133.0" resizable="false" text="Price" />
+            <TableColumn fx:id="roomNumber" editable="false" maxWidth="155.0" prefWidth="155.0" resizable="false" text="Room Number" />
+            <TableColumn fx:id="roomCategory" editable="false" maxWidth="155.0" prefWidth="155.0" resizable="false" text="Room Category" />
+            <TableColumn fx:id="roomType" editable="false" maxWidth="155.0" prefWidth="155.0" resizable="false" text="Room Type" />
+            <TableColumn fx:id="roomLocation" editable="false" maxWidth="155.0" prefWidth="155.0" resizable="false" text="Location" />
+            <TableColumn fx:id="roomSleeps" editable="false" maxWidth="155.0" prefWidth="155.0" resizable="false" text="Sleeps" />
+            <TableColumn fx:id="roomPrice" editable="false" maxWidth="155.0" prefWidth="155.0" resizable="false" text="Price" />
          </columns>
          <effect>
             <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
