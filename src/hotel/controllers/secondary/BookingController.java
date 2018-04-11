@@ -1,74 +1,71 @@
 package hotel.controllers.secondary;
 
+import com.jfoenix.controls.JFXTextField;
 import hotel.main.Rooms;
 import hotel.queries.BookingQueries;
 import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ResourceBundle;
 
 public class BookingController implements Initializable {
 
-    @FXML
-    public static ObservableList data = FXCollections.observableArrayList();
+    private LocalDate currentDate = LocalDate.now();
 
-    @FXML
-    private Button btnSearchCriteria, btnBack, btnNext;
+    public static ObservableList<Rooms> data = FXCollections.observableArrayList();
 
-    @FXML
-    private Pane availabilityPane;
+    public static String personID, bookingID, roomID, price, fName, lName;
 
-    @FXML
-    private ComboBox<String> categoryBox, typeBox, locationBox;
+    private static long days;
 
-    @FXML
-    private TableView<Rooms> bookingTable = new TableView<>();
-
-    @FXML
-    private TableColumn<Rooms, String> roomNumber = new TableColumn<>();
-
-    @FXML
-    private TableColumn<Rooms, String> roomCategory = new TableColumn<>();
-
-    @FXML
-    private TableColumn<Rooms, String> roomType = new TableColumn<>();
-
-    @FXML
-    private TableColumn<Rooms, String> roomLocation = new TableColumn<>();
-
-    @FXML
-    private TableColumn<Rooms, String> roomSleeps = new TableColumn<>();
-
-    @FXML
-    private TableColumn<Rooms, String> roomPrice = new TableColumn<>();
-
-    @FXML
-    private TableColumn<Rooms, String> roomSelect = new TableColumn<>();
+    @FXML private Pane availabilityPane, informationPane;
+    @FXML private DatePicker checkInDate, checkOutDate;
+    @FXML private Button btnSearchCriteria, btnMakeReservation, btnBack, btnNext;
+    @FXML private JFXTextField txtFirstName, txtLastName, txtPhone, txtEmail, txtAddress, txtCity, txtState, txtZipcode;
+    @FXML private ComboBox<String> categoryBox, typeBox, locationBox;
+    @FXML private TableView<Rooms> bookingTable = new TableView<>();
+    @FXML private TableColumn<Rooms, String> roomSelect = new TableColumn<>();
+    @FXML private TableColumn<Rooms, String> roomNumber = new TableColumn<>();
+    @FXML private TableColumn<Rooms, String> roomCategory = new TableColumn<>();
+    @FXML private TableColumn<Rooms, String> roomType = new TableColumn<>();
+    @FXML private TableColumn<Rooms, String> roomLocation = new TableColumn<>();
+    @FXML private TableColumn<Rooms, String> roomSleeps = new TableColumn<>();
+    @FXML private TableColumn<Rooms, String> roomPrice = new TableColumn<>();
 
     @FXML
     public void handleButtonAction(ActionEvent event) throws Exception {
 
         if (event.getTarget() == btnSearchCriteria) {
-            availabilityPane.setVisible(false);
-            bookingTable.setVisible(true);
-            btnBack.setVisible(true);
-            btnNext.setVisible(true);
 
-            BookingQueries bq = new BookingQueries();
-            bq.loadTable(categoryBox.getValue(), typeBox.getValue(), locationBox.getValue());
-            populateTable();
+            if (checkInDate.getValue() == null || checkOutDate.getValue() == null)
+                System.out.println("Need date!");
+
+            else if (checkInDate.getValue().isBefore(currentDate) || checkOutDate.getValue().isBefore(currentDate))
+                System.out.println("Invalid date!");
+
+            else if (checkOutDate.getValue().isBefore(checkInDate.getValue()))
+                System.out.println("Check out date cannot be before check in date!");
+
+            else {
+                availabilityPane.setVisible(false);
+                bookingTable.setVisible(true);
+                btnBack.setVisible(true);
+                btnNext.setVisible(true);
+
+                BookingQueries bq = new BookingQueries();
+                bq.loadTable(checkInDate.getValue(), checkOutDate.getValue(), categoryBox.getValue(), typeBox.getValue(), locationBox.getValue());
+                populateTable();
+            }
         }
 
         if (bookingTable.isVisible()) {
@@ -83,8 +80,47 @@ public class BookingController implements Initializable {
             }
             else if (event.getTarget() == btnNext) {
 
+                btnNext.setVisible(false);
+                bookingTable.setVisible(false);
+                informationPane.setVisible(true);
             }
         }
+
+        else if (informationPane.isVisible()) {
+
+            if (event.getTarget() == btnBack) {
+
+                informationPane.setVisible(false);
+                btnNext.setVisible(true);
+                bookingTable.setVisible(true);
+            }
+        }
+
+        if (event.getTarget() == btnMakeReservation) {
+
+            BookingQueries bq = new BookingQueries();
+
+            bq.userInformation(txtFirstName.getText(), txtLastName.getText(), txtPhone.getText(), txtEmail.getText(),
+                    txtAddress.getText(), txtCity.getText(), txtState.getText(), txtZipcode.getText());
+
+            for (Rooms bean : data)
+                if (bean.getSelect().isSelected()) {
+                    System.out.println(bean.getNumber());
+                    bq.selectRooms(bean.getNumber(), personID, checkInDate.getValue(), checkOutDate.getValue());
+            }
+        }
+    }
+
+    public long calculateDays() {
+
+        days = ChronoUnit.DAYS.between(checkInDate.getValue(), checkOutDate.getValue());
+
+        return days;
+    }
+
+    public int calculateTotal(int cost) {
+
+        return cost;
     }
 
     public void reset() {
@@ -96,13 +132,13 @@ public class BookingController implements Initializable {
 
     public void populateTable() {
 
+        roomSelect.setCellValueFactory(new PropertyValueFactory<>("Select"));
         roomNumber.setCellValueFactory(new PropertyValueFactory<>("Number"));
         roomCategory.setCellValueFactory(new PropertyValueFactory<>("Category"));
         roomType.setCellValueFactory(new PropertyValueFactory<>("Type"));
         roomLocation.setCellValueFactory(new PropertyValueFactory<>("Location"));
         roomSleeps.setCellValueFactory(new PropertyValueFactory<>("Sleeps"));
         roomPrice.setCellValueFactory(new PropertyValueFactory<>("Price"));
-        roomSelect.setCellValueFactory(new PropertyValueFactory<>("Select"));
 
         bookingTable.setItems(data);
     }
@@ -110,9 +146,9 @@ public class BookingController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        final ObservableList<String> anyType = FXCollections.observableArrayList("", "1 Queen", "2 Queens", "2 Room", "3 Room", "4 Room", "Bridal");
-        final ObservableList<String> Luxury = FXCollections.observableArrayList("", "1 Queen", "2 Queens", "2 Room", "3 Room", "Bridal");
-        final ObservableList<String> Cottage = FXCollections.observableArrayList("", "2 Room", "3 Room", "4 Room");
+        final ObservableList<String> anyType = FXCollections.observableArrayList("", "1 Queen Bed", "2 Queen Bed", "Two Room", "Three Room", "Four Room", "Bridal");
+        final ObservableList<String> Luxury = FXCollections.observableArrayList("", "1 Queen Bed", "2 Queen Bed", "Two Room", "Three Room", "Bridal");
+        final ObservableList<String> Cottage = FXCollections.observableArrayList("", "Two Room", "Three Room", "Four Room");
         final ObservableList<String> category = FXCollections.observableArrayList("", "Luxury", "Cottage");
         final ObservableList<String> location = FXCollections.observableArrayList("", "Patio", "Forest");
 
@@ -123,11 +159,15 @@ public class BookingController implements Initializable {
         categoryBox.getSelectionModel().selectedItemProperty().addListener((ChangeListener) (observable, oldValue, newValue) -> {
 
             switch (newValue.toString()) {
+                case "":
+                    typeBox.setItems(anyType);
+                    break;
                 case "Luxury":
                     typeBox.setItems(Luxury);
                     break;
                 case "Cottage":
                     typeBox.setItems(Cottage);
+                    break;
             }
         });
     }

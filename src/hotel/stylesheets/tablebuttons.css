@@ -1,0 +1,7 @@
+.button
+{
+    -fx-background-color: transparent;
+    -fx-graphic: url("../images/icons8_Add_28px.png");
+    -fx-padding: 0px;
+    -fx-background-radius: 100em;
+}

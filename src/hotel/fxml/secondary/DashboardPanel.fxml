@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="dashboardPane" fx:id="dashboardPane" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../../stylesheets/backgrounds.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.controllers.primary.AdminController">
+<AnchorPane id="dashboardPane" fx:id="dashboardPane" prefHeight="736.0" prefWidth="1046.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../../stylesheets/backgrounds.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.controllers.secondary.DashboardController">
    <children>
       <Pane layoutX="32.0" layoutY="32.0" opacity="0.9" prefHeight="165.0" prefWidth="276.0" style="-fx-background-color: #DA534F; -fx-background-radius: .5em;" AnchorPane.bottomAnchor="539.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="708.0" AnchorPane.topAnchor="32.0">
          <children>
@@ -25,7 +25,7 @@
                   <Font name="Segoe UI Bold" size="30.0" />
                </font>
             </Text>
-            <Text fill="#f6f6f6" layoutX="14.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50" textAlignment="CENTER" wrappingWidth="172.0">
+            <Text fx:id="availableRoomsField" fill="#f6f6f6" layoutX="14.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50" textAlignment="CENTER" wrappingWidth="172.0">
                <font>
                   <Font name="Segoe UI Bold" size="48.0" />
                </font>
@@ -47,7 +47,7 @@
                   <Font name="Segoe UI Bold" size="30.0" />
                </font>
             </Text>
-            <Text fill="#f6f6f6" layoutX="14.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="45" textAlignment="CENTER" wrappingWidth="172.0">
+            <Text fx:id="totalBookingsField" fill="#f6f6f6" layoutX="14.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="45" textAlignment="CENTER" wrappingWidth="172.0">
                <font>
                   <Font name="Segoe UI Bold" size="48.0" />
                </font>
@@ -69,7 +69,7 @@
                   <Font name="Segoe UI Bold" size="30.0" />
                </font>
             </Text>
-            <Text fill="#f6f6f6" layoutX="18.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15" textAlignment="CENTER" wrappingWidth="172.0">
+            <Text fx:id="totalGuestsField" fill="#f6f6f6" layoutX="18.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15" textAlignment="CENTER" wrappingWidth="172.0">
                <font>
                   <Font name="Segoe UI Bold" size="48.0" />
                </font>
@@ -79,10 +79,13 @@
             <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
          </effect>
       </Pane>
-      <TableView layoutX="32.0" layoutY="255.0" opacity="0.9" prefHeight="475.0" prefWidth="475.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: .5em;" stylesheets="@../../stylesheets/tableviews.css" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="32.0">
+      <TableView fx:id="latestBookingsTable" layoutX="32.0" layoutY="255.0" opacity="0.9" prefHeight="475.0" prefWidth="475.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: .5em;" stylesheets="@../../stylesheets/tableviews.css" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="32.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="firstName" prefWidth="101.0" text="First Name" />
+            <TableColumn fx:id="lastName" prefWidth="372.0" text="Last Name" />
+            <TableColumn fx:id="roomNumber" prefWidth="101.0" text="Room Number" />
+            <TableColumn fx:id="checkIn" prefWidth="101.0" text="Check In" />
+            <TableColumn fx:id="checkOut" prefWidth="101.0" text="Check Out" />
          </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -91,7 +94,7 @@
             <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
          </effect>
       </TableView>
-      <PieChart layoutX="539.0" layoutY="255.0" opacity="0.9" prefHeight="475.0" prefWidth="475.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: .5em;" AnchorPane.bottomAnchor="32.0" AnchorPane.rightAnchor="32.0">
+      <PieChart fx:id="roomStatusChart" layoutX="539.0" layoutY="255.0" opacity="0.9" prefHeight="475.0" prefWidth="475.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: .5em;" title="Rooms Status Overview" AnchorPane.bottomAnchor="32.0" AnchorPane.rightAnchor="32.0">
          <effect>
             <DropShadow blurType="ONE_PASS_BOX" color="#00000027" />
          </effect>
