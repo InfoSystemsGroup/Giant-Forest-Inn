@@ -35,13 +35,23 @@
 
 .table-row-cell:selected
 {
-    -fx-background-color: #626262;
-    -fx-opacity: 60%;
+    -fx-background-color: derive(-fx-base, 0%);
+}
+
+.table-row-cell:selected .text
+{
+    -fx-fill: #333333;
 }
 
 .table-row-cell:odd
 {
     -fx-border-color: transparent;
+}
+
+.table-row-cell:empty
+{
+    -fx-background-color: #f6f6f6;
+    -fx-opacity: 40%;
 }
 
 .table-view .filler

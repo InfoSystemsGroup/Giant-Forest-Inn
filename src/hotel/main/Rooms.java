@@ -1,7 +1,10 @@
 package hotel.main;
 
+import com.jfoenix.controls.JFXCheckBox;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.scene.control.CheckBox;
+
+import java.util.Currency;
 
 public class Rooms {
 
@@ -10,18 +13,33 @@ public class Rooms {
     private SimpleStringProperty Type;
     private SimpleStringProperty Location;
     private SimpleStringProperty Sleeps;
-    private SimpleStringProperty Price;
-    private CheckBox Select;
+    private SimpleIntegerProperty Price;
+    private SimpleStringProperty Status;
+    private JFXCheckBox Select;
 
-    public Rooms(String Number, String Category, String Type, String Location, String Sleeps, String Price) {
+    public Rooms(String Number, String Category, String Type, String Location, String Sleeps, int Price) {
 
+        this.Select = new JFXCheckBox();
         this.Number = new SimpleStringProperty(Number);
         this.Category = new SimpleStringProperty(Category);
         this.Type = new SimpleStringProperty(Type);
         this.Location = new SimpleStringProperty(Location);
         this.Sleeps = new SimpleStringProperty(Sleeps);
-        this.Price = new SimpleStringProperty(Price);
-        this.Select = new CheckBox();
+        this.Price = new SimpleIntegerProperty(Price);
+    }
+
+    public Rooms(String Number, String Category, String Type, String Location, String Status) {
+
+        this.Number = new SimpleStringProperty(Number);
+        this.Category = new SimpleStringProperty(Category);
+        this.Type = new SimpleStringProperty(Type);
+        this.Location = new SimpleStringProperty(Location);
+        this.Status = new SimpleStringProperty(Status);
+    }
+
+    public Rooms(String Number, String Status) {
+
+        this.Status = new SimpleStringProperty(Status);
     }
 
     public String getNumber() {
@@ -64,19 +82,27 @@ public class Rooms {
         this.Sleeps.set(Sleeps);
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return Price.get();
     }
 
-    public void setPrice(String Price) {
+    public void setPrice(int Price) {
         this.Price.set(Price);
     }
 
-    public CheckBox getSelect() {
+    public String getStatus() {
+        return Status.get();
+    }
+
+    public void setStatus(String Status) {
+        this.Status.set(Status);
+    }
+
+    public JFXCheckBox getSelect() {
         return Select;
     }
 
-    public void setSelect(CheckBox Select) {
+    public void setSelect(JFXCheckBox Select) {
         this.Select = Select;
     }
 }
