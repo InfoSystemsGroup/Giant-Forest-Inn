@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -21,46 +20,39 @@
                   <Image url="@../../images/GFI_Logo_G.png" />
                </image>
             </ImageView>
-            <HBox layoutX="15.0" layoutY="192.0" prefHeight="396.0" prefWidth="925.0" spacing="400.0" style="-fx-border-color: #333333;">
-               <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="2.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price" textAlignment="CENTER" />
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
             <Text layoutX="15.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest name" />
             <Text layoutX="15.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
-            <Text layoutX="776.0" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" />
-            <HBox layoutX="822.0" layoutY="588.0" prefHeight="17.0" prefWidth="86.0" style="-fx-border-color: #333333;" />
+            <Text layoutX="760.0" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" />
+            <HBox layoutX="802.0" layoutY="588.0" prefHeight="17.0" prefWidth="86.0" style="-fx-border-color: #333333;" />
+            <TableView layoutX="61.0" layoutY="208.0" prefHeight="380.0" prefWidth="834.0" stylesheets="@../../stylesheets/BillingTable.css">
+              <columns>
+                <TableColumn prefWidth="300.0" text="Date" />
+                <TableColumn prefWidth="440.0" text="Description" />
+                  <TableColumn prefWidth="100.0" text="Price" />
+              </columns>
+            </TableView>
          </children></Pane>
-      <TableView layoutX="80.0" layoutY="68.0" prefHeight="584.0" prefWidth="835.0" visible="false" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
+      <TableView layoutX="80.0" layoutY="68.0" prefHeight="584.0" prefWidth="835.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../../stylesheets/tableviews.css" visible="false" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
         <columns>
           <TableColumn prefWidth="50.0" text="Select" />
-          <TableColumn prefWidth="313.0" text="Guest" />
+          <TableColumn prefWidth="313.0" text="Guest Name" />
             <TableColumn prefWidth="313.0" text="Room #" />
             <TableColumn prefWidth="313.0" text="Bill Total" />
         </columns>
       </TableView>
-      <JFXButton layoutX="910.0" layoutY="661.0" prefHeight="40.0" prefWidth="70.0" stylesheets="@../../stylesheets/buttons.css" text="Next" textFill="#f6f6f6" visible="false" AnchorPane.bottomAnchor="35.0" AnchorPane.rightAnchor="65.0">
+      <JFXButton layoutX="910.0" layoutY="661.0" prefHeight="40.0" prefWidth="70.0" stylesheets="@../../stylesheets/buttons.css" text="Next" textFill="#f6f6f6" visible="false" AnchorPane.bottomAnchor="35.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="661.0">
          <font>
             <Font size="18.0" />
          </font></JFXButton>
-      <JFXButton layoutX="903.0" layoutY="682.0" stylesheets="@../../stylesheets/buttons.css" text="Print" textFill="#f6f6f6" AnchorPane.bottomAnchor="35.0" AnchorPane.rightAnchor="65.0">
+      <JFXButton layoutX="903.0" layoutY="682.0" stylesheets="@../../stylesheets/buttons.css" text="Print" textFill="#f6f6f6" visible="false" AnchorPane.bottomAnchor="35.0" AnchorPane.rightAnchor="65.0">
          <font>
             <Font size="18.0" />
          </font>
       </JFXButton>
+      <Text fill="#268057" layoutX="410.0" layoutY="688.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Billing Info" visible="false">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
