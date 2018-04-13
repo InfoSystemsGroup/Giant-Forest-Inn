@@ -128,6 +128,8 @@ public class BookingController implements Initializable {
         for ( int i = 0; i < bookingTable.getItems().size(); i++) {
             bookingTable.getItems().clear();
         }
+
+        data.clear();
     }
 
     public void populateTable() {

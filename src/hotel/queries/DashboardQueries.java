@@ -13,11 +13,6 @@ import static java.lang.Integer.valueOf;
 
 public class DashboardQueries extends DashboardController {
 
-    private static ArrayList<String> status = new ArrayList<>();
-    private static ArrayList<Integer> amount = new ArrayList<>();
-    private static ArrayList<Integer> clean = new ArrayList<>();
-    private static ArrayList<Integer> dirty = new ArrayList<>();
-
     private Statement statement;
     private Connection connection;
 
@@ -29,7 +24,7 @@ public class DashboardQueries extends DashboardController {
         return DriverManager.getConnection("jdbc:ucanaccess://C:/IntelliJ Projects/Giant-Forest-Inn/Dependencies/Database/giantForestInn.accdb");
     }
 
-    public void loadTable() throws Exception{
+    public void loadTable() throws Exception {
 
         connection = getConnection();
 
@@ -61,7 +56,7 @@ public class DashboardQueries extends DashboardController {
         }
     }
 
-    public void loadPieChart() throws Exception{
+    public void loadPieChart() throws Exception {
 
         connection = getConnection();
 
@@ -97,4 +92,36 @@ public class DashboardQueries extends DashboardController {
             System.exit(1);
         }
     }
+
+    /*public void loadFields() throws Exception{
+
+        connection = getConnection();
+
+        try {
+            PreparedStatement statusTable = connection.prepareStatement("SELECT bookingsID.roomID, personID.firstName, personID.lastName, bookingsID.checkIn, bookingsID.checkOut\n" +
+                    "FROM personID INNER JOIN bookingsID ON personID.[personID] = bookingsID.[personID];");
+
+            ResultSet rs = statusTable.executeQuery();
+
+            while (rs.next()) {
+
+                bookings.add(new Bookings(
+                        rs.getString("firstName"),
+                        rs.getString("lastName"),
+                        rs.getString("roomID"),
+                        rs.getDate("checkIn"),
+                        rs.getDate("checkOut")
+                ));
+            }
+
+            connection.close();
+        }
+
+        catch (SQLException sqlException) {
+            JOptionPane.showMessageDialog(null,
+                    sqlException.getMessage(), "Database Error",
+                    JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
+        }
+    }*/
 }
