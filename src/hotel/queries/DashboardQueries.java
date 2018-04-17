@@ -71,7 +71,7 @@ public class DashboardQueries extends DashboardController {
                 amount.add(rs.getInt("roomID"));
             }
 
-            for (int i = 0; i < 48; i++) {
+            for (int i = 0; i < amount.size(); i++) {
 
                 if (status.get(i).equals("Clean"))
                     clean.add(amount.get(i));

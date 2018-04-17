@@ -1,8 +1,11 @@
 package hotel.main;
 
 import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXComboBox;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.Currency;
 
@@ -14,8 +17,9 @@ public class Rooms {
     private SimpleStringProperty Location;
     private SimpleStringProperty Sleeps;
     private SimpleIntegerProperty Price;
-    private SimpleStringProperty Status;
+    private SimpleStringProperty Condition;
     private JFXCheckBox Select;
+    private JFXComboBox Status;
 
     public Rooms(String Number, String Category, String Type, String Location, String Sleeps, int Price) {
 
@@ -28,18 +32,16 @@ public class Rooms {
         this.Price = new SimpleIntegerProperty(Price);
     }
 
-    public Rooms(String Number, String Category, String Type, String Location, String Status) {
+    public Rooms(String Number, String Category, String Type, String Location, String Condition) {
 
         this.Number = new SimpleStringProperty(Number);
         this.Category = new SimpleStringProperty(Category);
         this.Type = new SimpleStringProperty(Type);
         this.Location = new SimpleStringProperty(Location);
-        this.Status = new SimpleStringProperty(Status);
-    }
-
-    public Rooms(String Number, String Status) {
-
-        this.Status = new SimpleStringProperty(Status);
+        this.Status = new JFXComboBox();
+        final ObservableList<String> Status = FXCollections.observableArrayList("Clean", "Dirty", "Needs Repair");
+        this.Status.setItems(Status);
+        this.Status.getSelectionModel().select(Condition);
     }
 
     public String getNumber() {
@@ -90,12 +92,12 @@ public class Rooms {
         this.Price.set(Price);
     }
 
-    public String getStatus() {
-        return Status.get();
+    public JFXComboBox getStatus() {
+        return Status;
     }
 
-    public void setStatus(String Status) {
-        this.Status.set(Status);
+    public void setStatus(JFXComboBox Status) {
+        this.Status = Status;
     }
 
     public JFXCheckBox getSelect() {

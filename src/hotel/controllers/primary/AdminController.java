@@ -12,15 +12,12 @@ import javafx.event.ActionEvent;
 // Primary controller class used for handling action events
 public class AdminController extends Main {
 
-    @FXML
-    private Button btnDashboard, btnBooking, btnGuests, btnCalendar, btnHotelMap, btnBilling, btnRoomStatus, btnUsers, btnLogout;
+    @FXML private Button btnDashboard, btnBooking, btnGuests, btnCalendar, btnHotelMap, btnBilling, btnRoomStatus, btnUsers, btnLogout;
+    @FXML private AnchorPane dashboardPane, bookingPane, guestsPane, calendarPane, hotelmapPane, billingPane, roomstatusPane, usersPane;
 
-    @FXML
-    private AnchorPane dashboardPane, bookingPane, guestsPane, calendarPane, hotelmapPane, billingPane, roomstatusPane, usersPane;
-
-    DashboardController dc = new DashboardController();
-    BookingController bc = new BookingController();
-    RoomStatusController sc = new RoomStatusController();
+    private DashboardController dc = new DashboardController();
+    private BookingController bc = new BookingController();
+    private RoomStatusController sc = new RoomStatusController();
 
     // Method handles pane switching on button presses
     @SuppressWarnings("Duplicates") @FXML
