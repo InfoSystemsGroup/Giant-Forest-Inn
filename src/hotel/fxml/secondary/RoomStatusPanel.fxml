@@ -6,7 +6,7 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="roomstatusPane" fx:id="roomstatusPane" prefHeight="736.0" prefWidth="1046.0" stylesheets="@../../stylesheets/backgrounds.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.controllers.secondary.RoomStatusController">
    <children>
@@ -27,5 +27,10 @@
             <Font name="Segoe UI" size="18.0" />
          </font>
       </JFXButton>
+      <Text fill="#028444" layoutX="388.0" layoutY="687.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Status">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
