@@ -1,6 +1,8 @@
 package hotel.controllers.secondary;
 
 import com.jfoenix.controls.JFXTextField;
+import hotel.controllers.tertiary.InfoController;
+import hotel.main.Main;
 import hotel.main.Rooms;
 import hotel.queries.BookingQueries;
 import javafx.beans.value.ChangeListener;
@@ -10,9 +12,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 
+import javax.swing.*;
+import java.awt.*;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -41,6 +46,7 @@ public class BookingController implements Initializable {
     @FXML private TableColumn<Rooms, String> roomLocation = new TableColumn<>();
     @FXML private TableColumn<Rooms, String> roomSleeps = new TableColumn<>();
     @FXML private TableColumn<Rooms, String> roomPrice = new TableColumn<>();
+    private JOptionPane messagePane;
 
     @FXML
     public void handleButtonAction(ActionEvent event) throws Exception {
@@ -71,12 +77,17 @@ public class BookingController implements Initializable {
         if (bookingTable.isVisible()) {
 
             if (event.getTarget() == btnBack) {
-                btnBack.setVisible(false);
                 btnNext.setVisible(false);
+                btnBack.setVisible(false);
                 bookingTable.setVisible(false);
                 availabilityPane.setVisible(true);
 
-                reset();
+
+                for ( int i = 0; i < bookingTable.getItems().size(); i++) {
+                    bookingTable.getItems().clear();
+                }
+
+                data.clear();
             }
             else if (event.getTarget() == btnNext) {
 
@@ -108,6 +119,13 @@ public class BookingController implements Initializable {
                     System.out.println(bean.getNumber());
                     bq.selectRooms(bean.getNumber(), personID, checkInDate.getValue(), checkOutDate.getValue());
             }
+
+            JOptionPane.showMessageDialog(messagePane, "Reservation Complete!");
+
+            reset();
+
+            informationPane.setVisible(false);
+            availabilityPane.setVisible(true);
         }
     }
 
@@ -125,9 +143,12 @@ public class BookingController implements Initializable {
 
     public void reset() {
 
-        for ( int i = 0; i < bookingTable.getItems().size(); i++) {
-            bookingTable.getItems().clear();
-        }
+        categoryBox.getSelectionModel().clearSelection();
+        typeBox.getSelectionModel().clearSelection();
+        locationBox.getSelectionModel().clearSelection();
+        btnBack.setVisible(false);
+        checkInDate.setValue(null);
+        checkOutDate.setValue(null);
     }
 
     public void populateTable() {

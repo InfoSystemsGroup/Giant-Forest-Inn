@@ -1,5 +1,8 @@
 package hotel.controllers.primary;
 
+import hotel.controllers.secondary.BookingController;
+import hotel.controllers.secondary.DashboardController;
+import hotel.controllers.secondary.RoomStatusController;
 import hotel.main.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,11 +12,12 @@ import javafx.event.ActionEvent;
 // Primary controller class used for handling action events
 public class AdminController extends Main {
 
-    @FXML
-    private Button btnDashboard, btnBooking, btnGuests, btnCalendar, btnHotelMap, btnBilling, btnRoomStatus, btnUsers, btnLogout;
+    @FXML private Button btnDashboard, btnBooking, btnGuests, btnCalendar, btnHotelMap, btnBilling, btnRoomStatus, btnUsers, btnLogout;
+    @FXML private AnchorPane dashboardPane, bookingPane, guestsPane, calendarPane, hotelmapPane, billingPane, roomstatusPane, usersPane;
 
-    @FXML
-    private AnchorPane dashboardPane, bookingPane, guestsPane, calendarPane, hotelmapPane, billingPane, roomstatusPane, usersPane;
+    private DashboardController dc = new DashboardController();
+    private BookingController bc = new BookingController();
+    private RoomStatusController sc = new RoomStatusController();
 
     // Method handles pane switching on button presses
     @SuppressWarnings("Duplicates") @FXML
@@ -52,9 +56,17 @@ public class AdminController extends Main {
             usersPane.setVisible(true);
         }
         else if (event.getTarget() == btnLogout) {
+            reset();
             currentStage.hide();
             loginStage.show();
         }
+    }
+
+    private void reset() {
+
+        dc.reset();
+        bc.reset();
+        sc.reset();
     }
 
     // Method hides all panes

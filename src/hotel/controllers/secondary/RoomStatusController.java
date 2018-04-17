@@ -24,6 +24,15 @@ public class RoomStatusController implements Initializable{
     @FXML private TableColumn<Rooms, String> roomLocation = new TableColumn<>();
     @FXML private TableColumn<Rooms, String> roomStatus = new TableColumn<>();
 
+    public void reset() {
+
+        for ( int i = 0; i < statusTable.getItems().size(); i++) {
+            statusTable.getItems().clear();
+        }
+
+        data.clear();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 

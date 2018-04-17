@@ -58,6 +58,16 @@ public class Main extends Application {
         setScene();
     }
 
+    protected void informationGUI() throws Exception {
+
+        root = FXMLLoader.load(getClass().getResource("../fxml/tertiary/InfoPanel.fxml"));
+
+        currentStage = new Stage();
+        currentStage.initStyle(StageStyle.UNDECORATED);
+        currentStage.setScene(new Scene(root));
+        currentStage.show();
+    }
+
     // Method hides Login GUI and applies various attributes to the current stage
     public void setScene() {
 

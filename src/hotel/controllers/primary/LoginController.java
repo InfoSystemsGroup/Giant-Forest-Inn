@@ -17,17 +17,10 @@ public class LoginController extends Main {
 
     public static String Clearance;
 
-    @FXML
-    public Text errorText = new Text();
-
-    @FXML
-    public JFXButton btnSignIn = new JFXButton();
-
-    @FXML
-    public JFXTextField Username = new JFXTextField();
-
-    @FXML
-    public JFXPasswordField Password = new JFXPasswordField();
+    @FXML public Text errorText = new Text();
+    @FXML public JFXButton btnSignIn = new JFXButton();
+    @FXML public JFXTextField Username = new JFXTextField();
+    @FXML public JFXPasswordField Password = new JFXPasswordField();
 
     // Method handles login functions and exceptions
     public void handleButtonAction(ActionEvent event) throws Exception {
