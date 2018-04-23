@@ -31,13 +31,34 @@ public class RoomStatusQueries extends RoomStatusController {
             while (rs.next()) {
 
                 data.add(new Rooms(
-                        rs.getString("roomID"),
+                        rs.getInt("roomID"),
                         rs.getString("roomCategory"),
                         rs.getString("roomType"),
                         rs.getString("roomLocation"),
                         rs.getString("roomStatus")
                 ));
             }
+
+            connection.close();
+        }
+
+        catch (SQLException sqlException) {
+            JOptionPane.showMessageDialog(null,
+                    sqlException.getMessage(), "Database Error",
+                    JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
+        }
+    }
+
+    public void updateDatabase(String status, int number) throws Exception {
+
+        connection = getConnection();
+
+        try {
+            PreparedStatement statusUpdate = connection.prepareStatement("UPDATE roomsID SET roomStatus = ? WHERE roomID = ?");
+            statusUpdate.setString(1, status);
+            statusUpdate.setInt(2, number);
+            statusUpdate.executeUpdate();
 
             connection.close();
         }

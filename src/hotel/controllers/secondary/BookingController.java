@@ -1,9 +1,8 @@
 package hotel.controllers.secondary;
 
 import com.jfoenix.controls.JFXTextField;
-import hotel.controllers.tertiary.InfoController;
-import hotel.main.Main;
 import hotel.main.Rooms;
+import hotel.queries.BillingQueries;
 import hotel.queries.BookingQueries;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
@@ -17,10 +16,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 
 import javax.swing.*;
-import java.awt.*;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class BookingController implements Initializable {
@@ -28,6 +27,10 @@ public class BookingController implements Initializable {
     private LocalDate currentDate = LocalDate.now();
 
     public static ObservableList<Rooms> data = FXCollections.observableArrayList();
+
+    private static int cost = 0;
+
+    private ArrayList numberOfRooms = new ArrayList();
 
     public static String personID, bookingID, roomID, price, fName, lName;
 
@@ -110,6 +113,7 @@ public class BookingController implements Initializable {
         if (event.getTarget() == btnMakeReservation) {
 
             BookingQueries bq = new BookingQueries();
+            BillingQueries blq = new BillingQueries();
 
             bq.userInformation(txtFirstName.getText(), txtLastName.getText(), txtPhone.getText(), txtEmail.getText(),
                     txtAddress.getText(), txtCity.getText(), txtState.getText(), txtZipcode.getText());
@@ -117,8 +121,10 @@ public class BookingController implements Initializable {
             for (Rooms bean : data)
                 if (bean.getSelect().isSelected()) {
                     System.out.println(bean.getNumber());
-                    bq.selectRooms(bean.getNumber(), personID, checkInDate.getValue(), checkOutDate.getValue());
+                    bq.selectRooms(String.valueOf(bean.getNumber()), personID, checkInDate.getValue(), checkOutDate.getValue());
             }
+
+            blq.populateBillingID(personID, calculateRooms(), calculateDays(), calculateTotal());
 
             JOptionPane.showMessageDialog(messagePane, "Reservation Complete!");
 
@@ -126,19 +132,37 @@ public class BookingController implements Initializable {
 
             informationPane.setVisible(false);
             availabilityPane.setVisible(true);
+
+            new DashboardController().initialized();
+            new BillingController().initialized();
         }
     }
 
-    public long calculateDays() {
+    private long calculateDays() {
 
         days = ChronoUnit.DAYS.between(checkInDate.getValue(), checkOutDate.getValue());
 
         return days;
     }
 
-    public int calculateTotal(int cost) {
+    private int calculateTotal() {
+
+        for (Rooms bean : data)
+            if (bean.getSelect().isSelected())
+                cost += bean.getPrice();
+
+        cost *= calculateDays();
 
         return cost;
+    }
+
+    public int calculateRooms() {
+
+        for (Rooms bean : data)
+            if (bean.getSelect().isSelected())
+                numberOfRooms.add(bean.getNumber());
+
+        return numberOfRooms.size();
     }
 
     public void reset() {
@@ -149,6 +173,15 @@ public class BookingController implements Initializable {
         btnBack.setVisible(false);
         checkInDate.setValue(null);
         checkOutDate.setValue(null);
+    }
+
+    public void logout() {
+
+        for ( int i = 0; i < bookingTable.getItems().size(); i++) {
+            bookingTable.getItems().clear();
+        }
+
+        data.clear();
     }
 
     public void populateTable() {

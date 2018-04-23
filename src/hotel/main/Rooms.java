@@ -2,16 +2,18 @@ package hotel.main;
 
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
+import hotel.controllers.secondary.DashboardController;
+import hotel.queries.RoomStatusQueries;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import java.util.Currency;
+import javafx.scene.paint.Color;
 
 public class Rooms {
 
-    private SimpleStringProperty Number;
+    private SimpleIntegerProperty Number;
     private SimpleStringProperty Category;
     private SimpleStringProperty Type;
     private SimpleStringProperty Location;
@@ -20,11 +22,12 @@ public class Rooms {
     private SimpleStringProperty Condition;
     private JFXCheckBox Select;
     private JFXComboBox Status;
+    private Color green = Color.valueOf("028444");
 
-    public Rooms(String Number, String Category, String Type, String Location, String Sleeps, int Price) {
+    public Rooms(int Number, String Category, String Type, String Location, String Sleeps, int Price) {
 
         this.Select = new JFXCheckBox();
-        this.Number = new SimpleStringProperty(Number);
+        this.Number = new SimpleIntegerProperty(Number);
         this.Category = new SimpleStringProperty(Category);
         this.Type = new SimpleStringProperty(Type);
         this.Location = new SimpleStringProperty(Location);
@@ -32,9 +35,9 @@ public class Rooms {
         this.Price = new SimpleIntegerProperty(Price);
     }
 
-    public Rooms(String Number, String Category, String Type, String Location, String Condition) {
+    public Rooms(int Number, String Category, String Type, String Location, String Condition) {
 
-        this.Number = new SimpleStringProperty(Number);
+        this.Number = new SimpleIntegerProperty(Number);
         this.Category = new SimpleStringProperty(Category);
         this.Type = new SimpleStringProperty(Type);
         this.Location = new SimpleStringProperty(Location);
@@ -42,13 +45,40 @@ public class Rooms {
         final ObservableList<String> Status = FXCollections.observableArrayList("Clean", "Dirty", "Needs Repair");
         this.Status.setItems(Status);
         this.Status.getSelectionModel().select(Condition);
+        this.Status.setFocusColor(green);
+        this.Status.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+
+                    switch (newValue.toString()) {
+                        case "Clean":
+                            try {
+                                new RoomStatusQueries().updateDatabase("Clean", this.Number.getValue());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            break;
+                        case "Dirty":
+                            try {
+                                new RoomStatusQueries().updateDatabase("Dirty", this.Number.getValue());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            break;
+                        case "Needs Repair":
+                            try {
+                                new RoomStatusQueries().updateDatabase("Needs Repair", this.Number.getValue());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            break;
+                    }
+                });
     }
 
-    public String getNumber() {
+    public int getNumber() {
         return Number.get();
     }
 
-    public void setNumber(String Number) {
+    public void setNumber(int Number) {
         this.Number.set(Number);
     }
 

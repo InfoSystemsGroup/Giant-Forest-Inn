@@ -65,7 +65,7 @@ public class AdminController extends Main {
     private void reset() {
 
         dc.reset();
-        bc.reset();
+        bc.logout();
         sc.reset();
     }
 

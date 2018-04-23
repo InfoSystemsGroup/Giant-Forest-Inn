@@ -1,34 +1,43 @@
 package hotel.controllers.secondary;
 
 import hotel.main.Bookings;
-import hotel.main.Rooms;
 import hotel.queries.DashboardQueries;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
-import javafx.scene.chart.PieChartBuilder;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 
 import java.net.URL;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
 
-    public static ObservableList<Bookings> bookings = FXCollections.observableArrayList();
-    public static ObservableList<PieChart.Data> rooms = FXCollections.observableArrayList();
+    protected static ObservableList<Bookings> bookings = FXCollections.observableArrayList();
+    protected static ObservableList<PieChart.Data> rooms = FXCollections.observableArrayList();
 
     protected static ArrayList<String> status = new ArrayList<>();
     protected static ArrayList<Integer> amount = new ArrayList<>();
     protected static ArrayList<Integer> clean = new ArrayList<>();
     protected static ArrayList<Integer> dirty = new ArrayList<>();
+    protected static ArrayList<Integer> needsRepair = new ArrayList<>();
+    protected static ArrayList<Date> checkInDate = new ArrayList<>();
+    protected static ArrayList<Date> checkOutDate = new ArrayList<>();
+    protected static ArrayList<Integer> available = new ArrayList<>();
+    protected static ArrayList<Integer> totalAvailable = new ArrayList<>();
+    protected static ArrayList<Integer> totalGuests = new ArrayList<>();
 
-    @FXML private Text availableRoomsField;
+
+    @FXML private Text availableRoomsField = new Text();
+    @FXML private Text totalGuestsField = new Text();
+    @FXML private Text totalBookingsField = new Text();
     @FXML private TableView<Bookings> latestBookingsTable = new TableView<>();
     @FXML private TableColumn<Bookings, String> firstName = new TableColumn<>();
     @FXML private TableColumn<Bookings, String> lastName = new TableColumn<>();
@@ -55,14 +64,19 @@ public class DashboardController implements Initializable {
         dirty.clear();
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    void initialized() throws Exception {
 
-        //availableRoomsField =
+        bookings.clear();
+        latestBookingsTable.getItems().clear();
+        available.clear();
+        totalAvailable.clear();
+        availableRoomsField.setText(null);
+        totalBookingsField.setText(null);
+        checkInDate.clear();
+        checkOutDate.clear();
 
         try {
             new DashboardQueries().loadTable();
-            new DashboardQueries().loadPieChart();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -73,8 +87,34 @@ public class DashboardController implements Initializable {
         checkIn.setCellValueFactory(new PropertyValueFactory<>("checkIn"));
         checkOut.setCellValueFactory(new PropertyValueFactory<>("checkOut"));
 
+        availableRoomsField.setText(String.valueOf(new DashboardQueries().getAvailableRooms()));
+        totalGuestsField.setText(String.valueOf(new DashboardQueries().getGuests()));
+        totalBookingsField.setText(String.valueOf(checkInDate.size()));
+
         latestBookingsTable.setItems(bookings);
+    }
+
+    private void initializePieChart() {
+
+        rooms.clear();
+
+        try {
+            new DashboardQueries().loadPieChart();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         roomStatusChart.setData(rooms);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+        try {
+            initialized();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        initializePieChart();
     }
 }

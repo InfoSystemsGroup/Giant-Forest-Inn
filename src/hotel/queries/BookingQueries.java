@@ -69,7 +69,7 @@ public class BookingQueries extends BookingController {
                 price = rs.getString("roomPrice");
 
                 data.add(new Rooms(
-                        rs.getString("roomID"),
+                        rs.getInt("roomID"),
                         rs.getString("roomCategory"),
                         rs.getString("roomType"),
                         rs.getString("roomLocation"),
