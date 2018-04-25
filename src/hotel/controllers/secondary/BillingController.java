@@ -22,7 +22,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.concurrent.CountDownLatch;
 
 public class BillingController implements Initializable {
 

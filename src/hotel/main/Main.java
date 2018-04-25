@@ -59,7 +59,7 @@ public class Main extends Application {
     }
 
     // Method hides Login GUI and applies various attributes to the current stage
-    public void setScene() {
+    private void setScene() {
 
         loginStage.hide();
 

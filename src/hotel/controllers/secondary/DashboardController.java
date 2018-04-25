@@ -71,9 +71,11 @@ public class DashboardController implements Initializable {
         available.clear();
         totalAvailable.clear();
         availableRoomsField.setText(null);
+        totalGuestsField.setText(null);
         totalBookingsField.setText(null);
         checkInDate.clear();
         checkOutDate.clear();
+        totalGuests.clear();
 
         try {
             new DashboardQueries().loadTable();
@@ -87,8 +89,12 @@ public class DashboardController implements Initializable {
         checkIn.setCellValueFactory(new PropertyValueFactory<>("checkIn"));
         checkOut.setCellValueFactory(new PropertyValueFactory<>("checkOut"));
 
-        availableRoomsField.setText(String.valueOf(new DashboardQueries().getAvailableRooms()));
-        totalGuestsField.setText(String.valueOf(new DashboardQueries().getGuests()));
+        try {
+            availableRoomsField.setText(String.valueOf(new DashboardQueries().getAvailableRooms()));
+            totalGuestsField.setText(String.valueOf(new DashboardQueries().getGuests()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         totalBookingsField.setText(String.valueOf(checkInDate.size()));
 
         latestBookingsTable.setItems(bookings);
@@ -97,6 +103,7 @@ public class DashboardController implements Initializable {
     private void initializePieChart() {
 
         rooms.clear();
+        roomStatusChart.getData().clear();
 
         try {
             new DashboardQueries().loadPieChart();

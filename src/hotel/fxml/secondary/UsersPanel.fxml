@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="usersPane" fx:id="usersPane" prefHeight="736.0" prefWidth="1046.0" stylesheets="@../../stylesheets/backgrounds.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" />
+
+<AnchorPane id="usersPane" fx:id="usersPane" prefHeight="736.0" prefWidth="1046.0" stylesheets="@../../stylesheets/backgrounds.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.controllers.secondary.UsersController">
+   <children>
+      <TableView fx:id="usersTable" layoutX="93.0" layoutY="119.0" onMouseClicked="#handleMouseClick" prefHeight="622.0" prefWidth="300.0" style="-fx-background-color: #f6f6f6;" stylesheets="@../../stylesheets/tableviews.css" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0">
+        <columns>
+          <TableColumn fx:id="firstName" editable="false" prefWidth="100.0" sortable="false" />
+          <TableColumn fx:id="lastName" editable="false" prefWidth="100.0" sortable="false" />
+            <TableColumn fx:id="clearanceLevel" editable="false" prefWidth="100.0" sortable="false" />
+        </columns>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" color="#00000026" />
+         </effect>
+      </TableView>
+   </children>
+</AnchorPane>
